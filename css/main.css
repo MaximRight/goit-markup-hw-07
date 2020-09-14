@@ -1,0 +1,30 @@
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+body {
+  background-color: tomato;
+  list-style: none;
+}
+/*# sourceMappingURL=main.css.map */

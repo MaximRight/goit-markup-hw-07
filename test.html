@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=fallback"
+			rel="stylesheet"
+		/>
+
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" /> -->
+
+		<link rel="stylesheet" href="./css/styles.css" />
+	</head>
+	<body>
+		<a href="##"
+			><svg width="40" height="52">
+				<use href="./images/logo2mod.svg"></use>
+			</svg>
+		</a>
+
+		<!-- Тестовые кнопки -->
+		<input type="checkbox" checked />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<button class="button-submit">Кнопка</button>
+
+		<div class="astroboy"></div>
+	</body>
+
+	<script>
+		const inputs = document.querySelectorAll("input[type=checkbox]")
+		const button = document.querySelector(".button-submit")
+
+		function check() {
+			button.disabled = true
+			inputs.forEach(input => {
+				if (input.checked) button.disabled = false
+			})
+		}
+
+		inputs.forEach(input => input.addEventListener("change", check))
+	</script>
+</html>

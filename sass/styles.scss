@@ -1,0 +1,1688 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	user-select: none;
+}
+
+/* POSITION СНАЧАЛА, ПОТОМ ГЕОМЕТРИЯ, ПОТОМ ВСЕ ОСТАЛЬНОЕ!! */
+/* user-select: none; */
+/* UL паддинг и марджин в ноль, list style none */
+/* ссылке-Блоку можно задать паддинг! */
+
+:root {
+	--primary-text-color: #757575;
+	--title-text-color: #212121;
+	--accent-color: #2196f3;
+	--white-color: #ffffff;
+	--button-bcg: #f5f4fa;
+	--footer-color: #2f303a;
+	--header-stroke: #ececec;
+	--folio-border: #eeeeee;
+	--icon-color: #afb1b8;
+	--transition-time: 250ms;
+	--transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+	--btn-hover-color: #188ce8;
+	--wedo-back-color: rgba(47, 48, 58, 0.8);
+}
+
+body {
+	background-color: var(--white-color);
+	color: var(--primary-text-color);
+
+	font-family: roboto, sans-serif;
+	letter-spacing: 0.03em;
+}
+
+.section {
+	padding-top: 94px;
+	padding-bottom: 94px;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* СПЕЦИАЛЬНЫЕ ДОП КЛАССЫ! */
+
+.flexbox {
+	display: flex;
+}
+
+.no-top-padding {
+	padding-top: 0px;
+}
+
+.mrgn-btm {
+	margin-bottom: 30px;
+}
+
+/* можно через классы .list задавать тот же сброс точек */
+.is-none {
+	display: none;
+}
+
+/* прячет из разметки, но оставляет для читалок */
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+/* КОНЕЦ СПЕЦИАЛЬНЫХ ДОП КЛАССОВ! */
+
+/* Утилиты, это сброс маркеров для всех списков вообще */
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+/* запрет на ресайз поля для комментов */
+textarea {
+	resize: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* SPECIAL CONTAINERS */
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 1200px;
+	/* outline: 2px solid tomato; */
+}
+
+/* BODY */
+
+.body {
+	padding-top: 80px;
+}
+
+/* PAGE HEADER */
+
+.page-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+
+	background-color: #ffffff;
+	height: 80px;
+	border-bottom: 1px solid var(--header-stroke);
+}
+
+/* LOGO */
+
+.logo {
+	/* Костыль, так как логотип нижу ссылок странице даже на дизайнерском макете */
+
+	/* display: flex; */
+	/* margin-bottom: 20px; */
+
+	font-family: "Raleway", sans-serif;
+	color: var(--accent-color);
+
+	font-size: 26px;
+	line-height: 1.19;
+	text-decoration: none;
+	/* outline: 1px solid tomato; */
+}
+
+.logo-header {
+	color: var(--title-text-color);
+	font-size: 26px;
+}
+
+.logo-footer {
+	color: var(--white-color);
+}
+
+/* SITE NAV!!!*/
+
+.nav-container {
+	display: flex;
+	align-items: center;
+
+	/* max-height: 80px; */
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 1200px;
+
+	/* outline: 2px solid tomato; */
+}
+
+.navbar {
+	/* margin-bottom: 30px; */
+	display: flex;
+	align-items: center;
+}
+
+.site-nav {
+	display: flex;
+	/* outline: 1px solid tomato; */
+	margin-left: 93px;
+}
+
+.site-nav .item:not(:last-child) {
+	margin-right: 50px;
+}
+
+/* Олд Скул метод исключения элементов, все последующие item применяется действие, если они стоят перед первым item, к нему действие не применяется, перед ним никого нет */
+
+/* В данном случае работает на всех списки, в каждом списке исключается первый элемент - круто! */
+
+/* Переношу это в главный нав-контейнер */
+
+/* .nav-container .item + .item {
+	margin-left: 50px;
+} */
+
+/* Современный вариант исключения элементов
+ */
+/* .site-nav .item:not(:last-child) {
+	outline: 1px solid tomato;
+	margin-right: 50px;
+} */
+
+.site-nav .link {
+	position: relative;
+
+	display: block;
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+	color: var(--title-text-color);
+
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.02em;
+	text-decoration: none;
+
+	transition: color var(--transition-time) var(--transition-function);
+}
+
+.site-nav .link.current::after {
+	content: "";
+
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+	display: block;
+
+	width: 100%;
+	height: 4px;
+	border-radius: 2px;
+
+	background-color: var(--accent-color);
+
+	/* transition: opacity 250ms var(--timing-function);
+opacity: 0; */
+}
+
+/* .site-nav .link:hover::after{
+opacity: 1;
+
+} */
+
+.site-nav .link:hover,
+.site-nav .link:focus {
+	color: var(--accent-color);
+}
+
+.site-nav .link.current {
+	color: var(--accent-color);
+}
+
+/* CONTACTS !!!!!!!!!*/
+
+.contacts-container {
+	display: flex;
+	align-items: center;
+
+	height: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 1200px;
+}
+
+.contacts-nav {
+	display: flex;
+	margin-left: auto;
+}
+
+/* .contacts-nav .item {
+	display: block;
+} */
+
+.contacts-nav .link {
+	display: flex;
+	align-items: center;
+
+	/* padding-top: 32px; */
+	/* padding-bottom: 32px; */
+
+	color: var(--primary-text-color);
+
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.02em;
+	text-decoration: none;
+
+	transition: color var(--transition-time) var(--transition-function);
+}
+
+.contacts-nav .link .icon {
+	/* display: inline-flex; */
+	/* align-self: flex-end; */
+	/* justify-content: flex-end; */
+	margin-right: 10px;
+
+	/* не работает(((( */
+	/* transition: --color4 500ms cubic-bezier(0.4, 0, 0.2, 1); */
+}
+/* .contacts-nav.list .item:nth-child(2) .icon {
+	margin-right: 5px;
+} */
+
+.contacts-nav .item:not(:last-child) {
+	margin-right: 30px;
+}
+
+.contacts-nav .link:hover,
+.contacts-nav .link:focus {
+	color: var(--accent-color);
+	/* --color4: var(--accent-color); */
+}
+
+/* HERO css */
+
+.hero {
+	padding-top: 200px;
+	margin-left: auto;
+	margin-right: auto;
+
+	text-align: center;
+	max-width: 1600px;
+	height: 600px;
+
+	background-image: linear-gradient(
+			to right,
+			rgba(47, 48, 58, 0.4),
+			rgba(47, 48, 58, 0.4)
+		),
+		url(../images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: var(--footer-color);
+}
+
+.hero-container {
+	width: 696px;
+	display: inline-block;
+}
+
+.hero-title {
+	margin-top: 0px;
+	margin-bottom: 30px;
+	/* outline: 1px solid tomato; */
+
+	color: var(--white-color);
+
+	font-weight: 900;
+	font-size: 44px;
+	line-height: 1.36;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 32px;
+	border-radius: 4px;
+	min-width: 204px;
+	border: 4px solid transparent;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+	color: var(--white-color);
+	background-color: var(--accent-color);
+
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.87;
+	letter-spacing: 0.06em;
+	text-decoration: none;
+
+	transition: background-color var(--transition-time) var(--transition-function);
+
+	/* transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+
+	/* cursor: pointer; */
+}
+
+.btn:hover,
+.btn:focus {
+	/* border: 4px solid white; */
+	background-color: var(--btn-hover-color);
+}
+
+/* FEATURES НАШИ ПРЕИМУЩЕСТВА */
+
+.container.icons {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 1200px;
+	height: 251px;
+	/* outline: 2px solid tomato; */
+}
+
+.feature-list {
+	margin-top: 0px;
+
+	display: flex;
+}
+
+.feature-list .item {
+	width: 270px;
+	height: 101px;
+}
+
+/* Репета рекомендует лучше давать доп класс в хтмл,
+и оттуда назначать каждую иконку .feature-list не пишем,
+а упоминаем .icon-radar  */
+
+.feature-list .item::before {
+	display: block;
+	content: "";
+	height: 120px;
+	margin-bottom: 30px;
+	background-color: var(--button-bcg);
+	background-size: 70px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 4px;
+}
+.feature-list .item:nth-child(1)::before {
+	/* filter: invert(1); */
+	background-image: url(../images/feature1.svg);
+}
+
+.feature-list .item:nth-child(2)::before {
+	background-image: url(../images/feature2.svg);
+}
+.feature-list .item:nth-child(3)::before {
+	background-image: url(../images/feature3.svg);
+}
+.feature-list .item:nth-child(4)::before {
+	background-image: url(../images/feature4.svg);
+}
+
+.feature-list .item:not(:last-child) {
+	margin-right: 30px;
+}
+
+/* классный олдскул метод марджинов! */
+
+/* .feature-list .item + .item {
+	margin-left: 30px;
+} */
+
+.feature-list .title {
+	margin-top: 0px;
+	margin-bottom: 10px;
+
+	color: var(--title-text-color);
+
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	text-transform: uppercase;
+}
+
+.feature-list p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+	font-size: 14px;
+	line-height: 1.71;
+}
+
+/* WHAT WE DO СЕКЦИЯ ЧЕМ ЗАНИМАЕМСЯ!! and Team Headers*/
+
+.section-title {
+	margin-top: 0px;
+	margin-bottom: 50px;
+
+	color: var(--title-text-color);
+
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.17;
+	text-align: center;
+}
+
+.images-wedo {
+	display: flex;
+}
+
+.images-wedo .item:not(:last-child) {
+	margin-right: 30px;
+}
+
+/* .images-wedo .item + .item {
+	margin-left: 30px;
+} */
+
+.images-wedo img {
+	display: block;
+}
+
+.images-wedo .thumb {
+	position: relative;
+}
+
+.images-wedo .thumb::before {
+	position: absolute;
+	bottom: 0px;
+
+	/* opacity: 0; */
+
+	/* display: inline-block; */
+
+	content: "";
+	width: 370px;
+	height: 70px;
+
+	background-color: var(--wedo-back-color);
+}
+
+.images-wedo .title {
+	position: absolute;
+	bottom: 27px;
+
+	/*   */
+	pointer-events: none;
+
+	/* opacity: 0; */
+
+	/* padding: 27px; */
+	margin: 0px;
+	/* align-items: center; */
+	/* justify-content: center; */
+
+	color: #ffffff;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	text-align: center;
+	text-transform: uppercase;
+
+	width: 370px;
+}
+
+/* .thumb:hover .title,
+.thumb:hover::before {
+	opacity: 1;
+} */
+
+/* .images-wedo .item {
+	position: relative;
+} */
+
+/* .images-wedo .item::before {
+	position: absolute;
+	bottom: 0px;
+
+	display: inline-block;
+
+	content: "";
+	width: 370px;
+	height: 70px;
+
+	background-color: tomato;
+} */
+
+/* TEAM PHOTOS AND LINKS!!!*/
+
+.section.team {
+	background-color: var(--button-bcg);
+}
+
+/* calc (100% - кол-во марджинов в строке * значение марджина / количество элементов в строке) */
+
+.team-members {
+	display: flex;
+}
+
+.team-members > .item {
+	width: calc((100% - 3 * 30px) / 4);
+	padding-bottom: 30px;
+
+	text-align: center;
+
+	background-color: #fff;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+	border-radius: 0px 0px 4px 4px;
+
+	/* height: 428px; */
+
+	/* outline: 1px solid tomato; */
+}
+
+.team-members > .item:not(:last-child) {
+	margin-right: 30px;
+}
+
+/* .team-members > .item + .item {
+	margin-left: 30px;
+} */
+
+.team-members .title {
+	margin-top: 0px;
+	margin-bottom: 10px;
+
+	color: var(--title-text-color);
+
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.19;
+	/* outline: 1px solid tomato; */
+}
+
+.team-members .text {
+	margin-top: 0px;
+	margin-bottom: 16px;
+
+	font-size: 16px;
+	line-height: 1.19;
+	/* outline: 1px solid tomato; */
+}
+
+.team-list.links {
+	display: inline-flex;
+
+	/* outline: 1px solid black; */
+}
+
+/* надо поставить дисплей блок??? */
+
+.team-list .link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0px;
+
+	width: 44px;
+	height: 44px;
+	color: #afb1b8;
+	border-radius: 50%;
+
+	transition: color var(--transition-time) var(--transition-function),
+		background-color var(--transition-time) var(--transition-function);
+
+	/* background-color: yellow; */
+}
+
+.icon {
+	fill: currentColor;
+}
+
+.team-list .link:hover {
+	color: var(--white-color);
+	background-color: var(--accent-color);
+
+	/* если убрать fill: currentcolor из иконки, тогда заливаем в ссылке сразу и при ховере */
+	/* fill: tomato; */
+}
+
+.team-list .item:not(:last-child) {
+	margin-right: 10px;
+}
+
+/* .team-list .item + .item {
+	margin-left: 10px;
+} */
+
+/* OUR CLIENTS*/
+
+.clients {
+	padding-top: 94px;
+	padding-bottom: 94px;
+}
+
+.clients-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.clients-list .item:nth-child(2) .icon {
+	/* filter: drop-shadow(0 0 3px rgba(100, 0, 0, 0.5)); */
+	filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.2));
+}
+
+/* .clients-list .item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 170px;
+	height: 90px;
+
+	border: 1px solid #afb1b8;
+	border-radius: 4px;
+} */
+
+.clients-list .link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 170px;
+	height: 90px;
+
+	color: var(--icon-color);
+
+	border: 1px solid #afb1b8;
+	border-radius: 4px;
+
+	/* padding: 20px 63px; */
+	/* color: var(--accent-color); */
+
+	/* width: 63px; */
+	/* width: 170px;
+  height: 90px; */
+
+	transition: border var(--transition-time) var(--transition-function);
+}
+
+.clients-list .icon {
+	transition: color var(--transition-time) var(--transition-function);
+}
+
+/* .clients-list .item:hover,
+.clients-list .item:focus {
+	border: 1px solid var(--accent-color);
+} */
+
+.clients-list .link:hover,
+.clients-list .link:focus {
+	color: var(--accent-color);
+	border: 1px solid var(--accent-color);
+}
+
+/* FILTERS-LIST BUTTONS */
+
+.filters-list {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	margin-bottom: 50px;
+}
+
+.filters-list .item:not(:last-child) {
+	margin-right: 8px;
+}
+
+/* .filters-list .item + .item {
+	margin-left: 8px;
+} */
+
+.filters-list .filter {
+	padding: 6px 22px;
+	border-radius: 4px;
+	border: 0px solid transparent;
+
+	min-width: 73px;
+	height: 38px;
+
+	background-color: var(--button-bcg);
+	color: var(--title-text-color);
+
+	font-style: 400px;
+	font-family: inherit;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.62;
+	letter-spacing: 0.03em;
+
+	cursor: pointer;
+
+	transition: color var(--transition-time) var(--transition-function),
+		background-color var(--transition-time) var(--transition-function);
+}
+
+.filters-list filter:hover,
+.filters-list filter:focus {
+	/* border: 0px; */
+	color: var(--white-color);
+	background-color: var(--accent-color);
+	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+		0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* если несколько кнопок то в главном селекторе выстраивается шрифты и рамки и так далее, а во второстепенных .button.primary .button.secondary - выстраиваются отличающиеся цвета */
+
+/* Portfolio */
+
+/* .portfolio-list img {
+	display: block;
+} */
+
+.portfolio-list a {
+	display: block;
+}
+
+.portfolio-list {
+	display: flex;
+	/* background-color: teal; */
+	flex-wrap: wrap;
+	/* max-width: 1200px; */
+
+	/* ОЛДСКУЛЬНЫЙ ВАРИАНТ */
+	/* margin: -15px; */
+
+	/* outline: 1px solid tomato; */
+
+	/* рагульный вариант */
+	/* justify-content: space-between; */
+}
+
+.thumb {
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	/* overflow: hidden; */
+}
+
+/* calc (100% - кол-во марджинов в строке * значение марджина / количество элементов в строке) */
+.portfolio-list .item {
+	/* border: 1px solid tomato; */
+	/* моднявая тема */
+	width: calc((100% - 2 * 30px) / 3);
+	/* еще предлагали вставлять flex-basis вместо width */
+
+	/* при моднявом методе надо задать: */
+	/* margin-right: 30px; */
+	/* margin-bottom: 30px; */
+
+	/* ОЛДСКУЛЬНЫЙ ВАРИАНТ */
+	/* margin: 15px; */
+
+	/* border: 1px solid var(--folio-border); */
+
+	/* width: 370px; */
+	/* max-height: 404px; */
+	/* background-color: tomato; */
+
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+
+	transition: box-shadow var(--transition-time) var(--transition-function);
+}
+
+/* Альтернатива, Вариация работы с оформлением флекса
+при моднявом методе!! */
+/* первый вариант */
+.portfolio-list .item:not(:nth-child(3n)) {
+	margin-right: 30px;
+}
+
+.portfolio-list .item:not(:nth-last-child(-n + 3)) {
+	margin-bottom: 30px;
+}
+
+/* ЕСЛИ ЗАДАНЫ марджин райт и боттом! */
+
+/* второй вариант */
+/* .portfolio-links:nth-child(3n) {
+	margin-right: 0px;
+}
+
+.portfolio-links:nth-last-child(-n + 3) {
+	margin-bottom: 0px;
+} */
+
+.card-content {
+	padding: 20px 24px;
+	border: 1px solid var(--folio-border);
+	border-top: 0px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.portfolio-list .item .thumb {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+
+	position: relative;
+
+	overflow: hidden;
+}
+
+.portfolio-list .item .thumb::before {
+	position: absolute;
+
+	top: 0px;
+	left: 0px;
+
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgba(33, 150, 243, 0.9);
+	opacity: 0;
+
+	transition: transform var(--transition-time) var(--transition-function),
+		opacity var(--transition-time) var(--transition-function);
+
+	transform: translateY(100%);
+}
+
+.portfolio-list .item .text {
+	position: absolute;
+
+	color: var(--white-color);
+
+	padding: 63px 24px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400px;
+	font-size: 18px;
+	line-height: 1.56;
+
+	transform: translateY(100%);
+	opacity: 0;
+	transition: transform var(--transition-time) var(--transition-function),
+		opacity var(--transition-time) var(--transition-function);
+}
+
+.portfolio-list .item:hover,
+.portfolio-list .item:focus {
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+		1px 4px 6px rgba(0, 0, 0, 0.16);
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.portfolio-list .item .thumb:hover::before,
+.portfolio-list .item .thumb:hover .text {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.portfolio-list .item .title {
+	/* ATTENTION */
+	/* padding-left: 24px;
+	padding-right: 24px; */
+	margin-top: 0px;
+	margin-bottom: 4px;
+	color: var(--title-text-color);
+
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 2;
+	letter-spacing: 0.06em;
+}
+
+.portfolio-list .item p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+	color: var(--primary-text-color);
+
+	font-size: 16px;
+	line-height: 1.87;
+	text-decoration: none;
+}
+
+/* .portfolio-list .item a {
+	color: var(--primary-text-color);
+
+	font-size: 16px;
+	line-height: 1.87;
+	text-decoration: none;
+} */
+
+/* ---------МОДАЛКА ВСПЛЫВАЮЩАЯ!!!!------------ */
+
+.backdrop {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(0, 0, 0, 0.4);
+	opacity: 1;
+
+	transition: opacity 700ms var(--transition-function);
+}
+
+.backdrop.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+	/* top: 50%; */
+	left: 50%;
+	transform: translate(-50%, -100%) scale(0.1);
+	opacity: 0;
+}
+
+.modal {
+	position: absolute;
+	/* top: 50%; */
+	left: 50%;
+	transform: translate(-50%, 20%) scale(1);
+
+	width: 528px;
+	min-height: 581px;
+	padding: 15px;
+
+	background-color: white;
+
+	opacity: 1;
+
+	transition: transform var(--transition-time) var(--transition-function)
+			var(--transition-time),
+		opacity var(--transition-time) var(--transition-function)
+			var(--transition-time);
+}
+
+/*       -------АНКЕТА В МОДАЛКЕ!!!!------------ */
+
+.modal .title {
+	/* font-family: Roboto; */
+	/* font-style: normal; */
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+	/* letter-spacing: 0.03em; */
+	color: var(--title-text-color);
+}
+
+.form {
+	/* position: relative; */
+
+	width: 448px;
+	/* height: 581px; */
+	/* outline: 1px solid tomato; */
+	margin-left: auto;
+	margin-right: auto;
+	/* padding: 40px; */
+}
+
+.form .form-label {
+	/* font-family: Roboto; */
+	/* font-style: normal; */
+	margin-bottom: 4px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.16;
+	/* identical to box height */
+
+	letter-spacing: 0.01em;
+}
+
+.input-field {
+	display: inline-block;
+	position: relative;
+	/* flex-direction: column; */
+
+	/* position: relative; */
+	/* align-items: center; */
+
+	width: 448px;
+	/* height: 40px; */
+
+	/* outline: 1px solid blue; */
+	margin-bottom: 10px;
+
+	/* height: 58px; */
+}
+
+/* .form-field:nth-child(1)::before {
+	display: block;
+	content: "";
+	width: 20px;
+	height: 20px;
+	background-color: red;
+} */
+
+.input-field .form-input {
+	height: 40px;
+	margin: 0px;
+	padding: 12px 40px;
+
+	width: 100%;
+
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 1.16;
+	letter-spacing: 0.01em;
+}
+
+.form-input:hover {
+	border: 1px solid rgba(33, 33, 33, 0.7);
+}
+
+/* .input-field .form-label {
+} */
+
+/* .input-field .form-input {
+	width: 100%;
+} */
+
+.test-field {
+	position: relative;
+}
+
+.form .item {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.input-field .icon-form {
+	position: absolute;
+	top: 50%;
+	/* top: 0; */
+	/* left: 0; */
+	left: 12px;
+
+	/* top: 13.33px; */
+	/* left: 12px; */
+
+	transform: translateY(-50%);
+}
+
+/* .input-field .form-label {
+	position: absolute;
+	top: 50%;
+	left: 42px;
+
+	transform: translateY(-50%);
+	transition: transform 250ms var(--timing-function);
+} */
+
+/* НОВЫЙ МЕТОД, который поддерживают не все браузеры! */
+
+/* .input-field:focus-within .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+	color: red;
+	transform: translateY(-40px);
+} */
+
+.input-field:focus-within .icon-form {
+	fill: var(--accent-color);
+}
+
+.form-input:focus {
+	outline: transparent;
+	border: 1px solid var(--accent-color);
+}
+
+/* ------------------------------ */
+
+/* СТАРЫЙ МЕТОД, который поддерживают все браузеры! */
+
+/* .form-input:focus + .icon-form {
+	fill: var(--accent-color);
+} */
+
+/* .form-input:focus ~ label,
+.form-input:not(:placeholder-shown) ~ label {
+	color: red;
+	transform: translateY(-40px) translateX(-40px);
+} */
+
+/* -------------------- */
+
+/* .input-field.comment {
+	margin-bottom: 20px;
+} */
+
+.comment-field {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.comment {
+	padding: 12px 16px;
+	width: 448px;
+
+	/* margin-bottom: 20px; */
+
+	font-size: 12px;
+	line-height: 1.16;
+	letter-spacing: 0.01em;
+
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+}
+
+.comment:hover {
+	border: 1px solid rgba(33, 33, 33, 0.7);
+}
+
+.comment:focus {
+	outline: transparent;
+	border: 1px solid var(--accent-color);
+}
+
+.comment-field textarea::placeholder {
+	/* font-family: Roboto; */
+	/* font-style: normal; */
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.16;
+	letter-spacing: 0.01em;
+
+	color: rgba(117, 117, 117, 0.5);
+}
+
+/* CHECKBOX */
+
+.checkbox {
+	/* ЭТО КРОССБРАУЗЕРНЫЙ ХАК ОТ РЕПЕТЫ!!! */
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+
+	/* Это на будущее, пока не поддерживается всеми браузерами */
+	/* -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none; */
+}
+
+.label-checkbox {
+	display: flex;
+	/* flex-direction: row; */
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 30px;
+
+	/* width: 100%; */
+
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.71;
+
+	letter-spacing: 0.03em;
+
+	/* outline: 1px solid black; */
+}
+
+.icon-check {
+	margin-right: 7px;
+	width: 16px;
+	height: 15px;
+
+	/* background-image: url(../images/checkbox.svg); */
+	/* background-repeat: no-repeat; */
+	/* background-size: contain; */
+
+	border: 2px solid var(--title-text-color);
+	/* border: 2px solid var(--primary-text-color); */
+	border-radius: 2px;
+}
+
+.label-checkbox:hover .icon-check {
+	/* border: 2px solid rgba(50, 50, 50, 0.1); */
+	background-color: rgba(126, 122, 122, 0.1);
+}
+
+.label-checkbox:active .icon-check {
+	border: 2px solid rgba(107, 99, 99, 0.7);
+}
+
+.checkbox:checked + .icon-check {
+	border-radius: 2px;
+	border-color: var(--accent-color);
+	background-color: var(--accent-color);
+	background-image: url(../images/icon-check.svg);
+	background-origin: border-box;
+}
+
+.checkbox:checked:hover + .icon-check {
+	border-color: transparent;
+	background-image: url(../images/icon-check.svg),
+		linear-gradient(to right, rgba(47, 48, 58, 0.2), rgba(47, 48, 58, 0.2));
+}
+
+.checkbox:checked:active + .icon-check {
+	border-color: transparent;
+	background-image: url(../images/icon-check.svg),
+		linear-gradient(
+			to right,
+			rgba(233, 234, 236, 0.2),
+			rgba(233, 234, 236, 0.2)
+		);
+}
+
+.form-text:hover,
+.form-text:hover .link-checkbox,
+.link-checkbox:hover {
+	color: rgba(33, 33, 33, 0.9);
+}
+
+.link-checkbox {
+	text-decoration: underline;
+	color: var(--accent-color);
+}
+
+/* BUTTON SUBMIT */
+
+.form .button-submit:disabled {
+	background-color: gray;
+}
+
+.form .button-submit:disabled:hover {
+	background-color: gray;
+}
+
+.form .button-submit {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+	justify-content: center;
+
+	width: 200px;
+	height: 50px;
+	padding: 10px 55px;
+	color: var(--white-color);
+	background-color: var(--accent-color);
+
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border: 1px solid transparent;
+	border-radius: 4px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.87;
+
+	letter-spacing: 0.06em;
+	outline: transparent;
+}
+
+.form .button-submit:hover {
+	background-color: #1e8ce6;
+}
+
+.form .button-submit:active {
+	background-color: #1e8ce6dc;
+}
+
+/* BUTTON CLOSE */
+
+.button-close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 30px;
+	height: 30px;
+	/* padding: 0px; */
+
+	/* background-color: yellow; */
+	background-color: var(--white-color);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+
+	transition: fill var(--transition-time) var(--transition-function),
+		transform var(--transition-time) var(--transition-function);
+
+	outline: 0px;
+}
+
+.button-close .icon-form {
+	position: absolute;
+	align-self: center;
+	/* fill: tomato; */
+
+	width: 11px;
+	height: 11px;
+
+	/* width: 100%; */
+	/* height: 100%; */
+
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
+
+	transition: transform 500ms;
+}
+
+.button-close:hover {
+	fill: var(--accent-color);
+	stroke: var(--accent-color);
+	transform: scale(1.2) rotate(180deg);
+	/* transform: rotate(180deg); */
+}
+
+.button-close:active {
+	fill: var(--accent-color);
+	stroke: var(--accent-color);
+	transform: scale(1.4) rotate(180deg);
+}
+
+/* плохо рисуется браузерами, стили не работают, будем делать кастомные */
+/* height: 40px;
+	width: 40px; */
+
+/* .topic-options,
+.experience-options {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+
+.topic-options label {
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.topic-options li {
+	display: flex;
+	align-items: center;
+}
+
+.group {
+	margin-bottom: 20px;
+}
+
+.form .date {
+	border-width: 5px;
+	border-radius: 4px;
+	border-color: red;
+	font-size: 30px;
+	color: green;
+} */
+
+/* FOOTER */
+
+.footbar {
+	/* display: flex; */
+	margin-left: auto;
+	margin-right: auto;
+
+	/* width: 1200px; */
+
+	background-color: var(--footer-color);
+}
+
+.footbar .logo {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.wrapper {
+	display: flex;
+	align-items: baseline;
+	/* justify-content: space-between; */
+
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 60px;
+	width: 1200px;
+
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	/* outline: 2px solid tomato; */
+}
+
+.container-footer.address {
+	width: 231px;
+	margin-left: 0px;
+	margin-right: 70px;
+	/* padding-top: 60px; */
+	/* padding-bottom: 60px; */
+}
+
+.address .location,
+.address .link-footer:nth-child(1) {
+	/* display: inline-block; */
+	margin-top: 0px;
+	margin-bottom: 9px;
+}
+
+.address .location {
+	color: #ffffff;
+
+	font-style: normal;
+	font-size: 14px;
+	line-height: 1.71;
+}
+
+.address .title {
+	color: rgba(255, 255, 255, 0.6);
+
+	font-style: normal;
+	font-size: 14px;
+	line-height: 1.71;
+	text-decoration: none;
+
+	transition: color var(--transition-time) var(--transition-function);
+}
+
+.address .title:hover,
+.address .title:focus {
+	color: var(--accent-color);
+}
+
+/* FOOTER JOIN US */
+
+.container-footer.join-us {
+	/* display: inline-block; */
+	/* padding-top: 12px; */
+	/* padding-bottom: 100px; */
+	padding-left: 0px;
+	padding-right: 0px;
+	/* width: 240px; */
+	/* height: 80px; */
+	margin-right: 93px;
+}
+
+.title-footer {
+	display: block;
+
+	margin-top: 0px;
+	margin-bottom: 20px;
+	color: var(--white-color);
+	text-transform: uppercase;
+
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.03em;
+}
+
+.list-footer {
+	display: flex;
+}
+
+/* .list-footer.links {
+	display: inline-flex;
+	border: 1px solid black;
+} */
+
+.list-footer .item {
+	display: flex;
+	/* border: 1px solid black; */
+}
+
+.list-footer .item .link {
+	height: 44px;
+	width: 44px;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: 51% 50%;
+	/* background-color: tomato; */
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.1);
+
+	transition: background-color var(--transition-time) var(--transition-function);
+}
+
+.list-footer .item:nth-child(1) .link {
+	background-image: url(../images/footerlink1.svg);
+}
+.list-footer .item:nth-child(2) .link {
+	background-image: url(../images/footerlink2.svg);
+}
+.list-footer .item:nth-child(3) .link {
+	background-image: url(../images/footerlink3.svg);
+}
+
+.list-footer .item:nth-child(4) .link {
+	background-image: url(../images/footerlink4.svg);
+}
+.list-footer .link:hover,
+.list-footer .link:focus {
+	/* border-radius: 50%; */
+	background-color: var(--accent-color);
+}
+
+.list-footer .item + .item {
+	margin-left: 10px;
+}
+
+/* FOOTER SUBSCRIBE!!! */
+
+.container-subscribe {
+	/* display: inline-block; */
+
+	width: 570px;
+	height: 80px;
+
+	/* padding-top: 12px; */
+	/* padding-bottom: 100px; */
+	padding-left: 0px;
+	padding-right: 0px;
+	/* width: 240px; */
+}
+
+.form-subscribe {
+	display: flex;
+	align-items: center;
+}
+
+.form-subscribe .email {
+	width: 358px;
+	height: 50px;
+	padding: 15px 16px;
+
+	margin-right: 12px;
+
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+
+	color: white;
+	background-color: var(--footer-color);
+}
+
+.form-subscribe .email:hover {
+	border: 1px solid white;
+}
+
+.form-subscribe .email:focus {
+	outline: transparent;
+	border: 1px solid var(--accent-color);
+}
+
+.form-subscribe .button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 200px;
+	height: 50px;
+	padding: 10px 28px;
+	color: var(--white-color);
+	background-color: var(--accent-color);
+
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border: 1px solid transparent;
+	border-radius: 4px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.87;
+
+	letter-spacing: 0.06em;
+
+	transition: background-color var(--transition-time) var(--transition-function);
+}
+
+.form-subscribe .button:hover {
+	background-color: #188ce8;
+	/* border: 1px solid var(--white-color); */
+}
+
+.icon-footer {
+	margin-left: 10px;
+}
+
+/* ФЕНЕЧКА */
+
+.copyright {
+	display: flex;
+	justify-content: center;
+
+	margin: 0px;
+	padding: 15px;
+	/* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+/* Experiments */

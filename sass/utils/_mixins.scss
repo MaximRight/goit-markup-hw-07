@@ -1,0 +1,13 @@
+@mixin flexbox($display: flex) {
+	display: $display;
+}
+
+@mixin flex-center($display: flex, $content: center, $items: center) {
+	display: $display;
+	justify-content: $content;
+	align-items: $items;
+}
+
+@mixin mrgn-btm($margin: 30px) {
+	margin-bottom: $margin;
+}
