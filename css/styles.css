@@ -48,6 +48,16 @@ img {
   height: auto;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+}
+
 /* СПЕЦИАЛЬНЫЕ ДОП КЛАССЫ! */
 .flexbox {
   display: -webkit-box;
@@ -554,9 +564,6 @@ opacity: 1;
   margin-right: 30px;
 }
 
-/* .team-members > .item + .item {
-	margin-left: 30px;
-} */
 .team-members .title {
   margin-top: 0px;
   margin-bottom: 10px;
@@ -1158,7 +1165,9 @@ opacity: 1;
 }
 
 .link-checkbox {
-  text-decoration: underline;
+  border-bottom: 1px solid currentColor;
+  display: inline-block;
+  line-height: 0.9;
   color: var(--accent-color);
 }
 

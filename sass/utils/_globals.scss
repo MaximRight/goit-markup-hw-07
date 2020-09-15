@@ -1,24 +1,59 @@
+// Это для для плавающего меню, высчитывается по джаваскрипту
+.body {
+	padding-top: 80px;
+}
+
+// Паддинги для секции в этом макете
 .section {
 	padding-top: 94px;
 	padding-bottom: 94px;
 }
 
+// Стандарт для рисунков
 img {
 	display: block;
 	max-width: 100%;
 	height: auto;
 }
 
+// Отключаем ресайз комментов
 textarea {
 	resize: none;
 }
 
+// Убираем подчеркивания ссылкам
 a {
 	text-decoration: none;
 }
 
+// Отключаем точки и отступы спискам
 ul {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
+}
+
+// Отключаем отступы абзацам и заголовкам
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+	padding: 0;
+	margin: 0;
+}
+
+.icon {
+	fill: currentColor;
+}
+
+// Контейнер для центровки контента
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 1200px;
+	/* outline: 2px solid tomato; */
 }

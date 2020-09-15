@@ -45,6 +45,16 @@ img {
 	height: auto;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+	padding: 0;
+	margin: 0;
+}
+
 /* СПЕЦИАЛЬНЫЕ ДОП КЛАССЫ! */
 
 .flexbox {
@@ -1203,7 +1213,10 @@ opacity: 1;
 }
 
 .link-checkbox {
-	text-decoration: underline;
+	// text-decoration: underline;
+	border-bottom: 1px solid currentColor;
+	display: inline-block;
+	line-height: 0.9;
 	color: var(--accent-color);
 }
 

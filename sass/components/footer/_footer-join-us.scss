@@ -1,0 +1,64 @@
+/* FOOTER JOIN US */
+
+.container-footer.join-us {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-right: 93px;
+}
+
+.title-footer {
+	display: block;
+
+	margin-top: 0px;
+	margin-bottom: 20px;
+	color: $white-color;
+	text-transform: uppercase;
+
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.03em;
+}
+
+.list-footer {
+	display: flex;
+
+	.item {
+		display: flex;
+	}
+}
+
+.list-footer .item .link {
+	height: 44px;
+	width: 44px;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: 51% 50%;
+	/* background-color: tomato; */
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.1);
+
+	transition: background-color $transition-time $transition-function;
+}
+
+.list-footer .item:not(:last-child) {
+	margin-right: 10px;
+}
+.list-footer .item:nth-child(1) .link {
+	background-image: url(../images/footerlink1.svg);
+}
+.list-footer .item:nth-child(2) .link {
+	background-image: url(../images/footerlink2.svg);
+}
+.list-footer .item:nth-child(3) .link {
+	background-image: url(../images/footerlink3.svg);
+}
+
+.list-footer .item:nth-child(4) .link {
+	background-image: url(../images/footerlink4.svg);
+}
+.list-footer .link:hover,
+.list-footer .link:focus {
+	/* border-radius: 50%; */
+	background-color: $accent-color;
+}
