@@ -1,6 +1,12 @@
-// Это для для плавающего меню, высчитывается по джаваскрипту
+// Это для для плавающего меню, высчитывается по джаваскрипту, а также значения глобальные для всего макета
 .body {
 	padding-top: 80px;
+
+	background-color: $white-color;
+	color: $primary-text-color;
+
+	font-family: roboto, sans-serif;
+	letter-spacing: 0.03em;
 }
 
 // Паддинги для секции в этом макете

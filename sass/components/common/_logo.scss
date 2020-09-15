@@ -1,25 +1,20 @@
 /* LOGO */
 
 .logo {
-	/* Костыль, так как логотип нижу ссылок странице даже на дизайнерском макете */
-
-	/* display: flex; */
-	/* margin-bottom: 20px; */
-
 	font-family: "Raleway", sans-serif;
-	color: var(--accent-color);
+	color: $accent-color;
 
 	font-size: 26px;
 	line-height: 1.19;
 	text-decoration: none;
 	/* outline: 1px solid tomato; */
-}
 
-.logo-header {
-	color: var(--title-text-color);
-	font-size: 26px;
-}
+	&-header {
+		color: $title-text-color;
+		font-size: 26px;
+	}
 
-.logo-footer {
-	color: var(--white-color);
+	&-footer {
+		color: $white-color;
+	}
 }

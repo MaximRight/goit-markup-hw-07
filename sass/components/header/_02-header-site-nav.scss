@@ -9,10 +9,10 @@
 	display: flex;
 	/* outline: 1px solid tomato; */
 	margin-left: 93px;
+}
 
-	.item:not(:last-child) {
-		margin-right: 50px;
-	}
+.site-nav .item:not(:last-child) {
+	margin-right: 50px;
 }
 
 .site-nav .link {

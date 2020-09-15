@@ -32,6 +32,8 @@ body {
 
 	font-family: roboto, sans-serif;
 	letter-spacing: 0.03em;
+
+	padding-top: 80px;
 }
 
 .section {
@@ -117,10 +119,6 @@ a {
 }
 
 /* BODY */
-
-.body {
-	padding-top: 80px;
-}
 
 /* PAGE HEADER */
 
@@ -771,7 +769,7 @@ opacity: 1;
 
 /* если несколько кнопок то в главном селекторе выстраивается шрифты и рамки и так далее, а во второстепенных .button.primary .button.secondary - выстраиваются отличающиеся цвета */
 
-/* Portfolio */
+/* PORTFOLIO*/
 
 /* .portfolio-list img {
 	display: block;

@@ -1,0 +1,53 @@
+/* OUR CLIENTS*/
+
+.clients {
+	padding-top: 94px;
+	padding-bottom: 94px;
+}
+
+.clients-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.clients-list .item:nth-child(2) .icon {
+	filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.2));
+}
+
+/* .clients-list .item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 170px;
+	height: 90px;
+
+	border: 1px solid #afb1b8;
+	border-radius: 4px;
+} */
+
+.clients-list .link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 170px;
+	height: 90px;
+
+	color: var(--icon-color);
+
+	border: 1px solid #afb1b8;
+	border-radius: 4px;
+
+	transition: border var(--transition-time) var(--transition-function);
+}
+
+.clients-list .icon {
+	transition: color var(--transition-time) var(--transition-function);
+}
+
+.clients-list .link:hover,
+.clients-list .link:focus {
+	color: var(--accent-color);
+	border: 1px solid var(--accent-color);
+}

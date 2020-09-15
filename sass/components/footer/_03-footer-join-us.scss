@@ -26,9 +26,13 @@
 	.item {
 		display: flex;
 	}
+
+	.item:not(:last-child) {
+		margin-right: 10px;
+	}
 }
 
-.list-footer .item .link {
+.list-footer .link {
 	height: 44px;
 	width: 44px;
 	background-size: 20px;
@@ -39,26 +43,18 @@
 	background-color: rgba(255, 255, 255, 0.1);
 
 	transition: background-color $transition-time $transition-function;
+
+	&:hover,
+	&:focus {
+		background-color: $accent-color;
+	}
 }
 
-.list-footer .item:not(:last-child) {
-	margin-right: 10px;
-}
-.list-footer .item:nth-child(1) .link {
-	background-image: url(../images/footerlink1.svg);
-}
-.list-footer .item:nth-child(2) .link {
-	background-image: url(../images/footerlink2.svg);
-}
-.list-footer .item:nth-child(3) .link {
-	background-image: url(../images/footerlink3.svg);
-}
+$numbers: "1" "footerlink1", "2" "footerlink2", "3" "footerlink3",
+	"4" "footerlink4";
 
-.list-footer .item:nth-child(4) .link {
-	background-image: url(../images/footerlink4.svg);
-}
-.list-footer .link:hover,
-.list-footer .link:focus {
-	/* border-radius: 50%; */
-	background-color: $accent-color;
+@each $iconNumber, $iconName in $numbers {
+	.list-footer .item:nth-child(#{$iconNumber}) .link {
+		background-image: url(../images/#{$iconName}.svg);
+	}
 }

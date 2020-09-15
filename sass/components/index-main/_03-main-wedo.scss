@@ -1,0 +1,94 @@
+/* WHAT WE DO СЕКЦИЯ ЧЕМ ЗАНИМАЕМСЯ!! and Team Headers*/
+
+.section-title {
+	margin-top: 0px;
+	margin-bottom: 50px;
+
+	color: var(--title-text-color);
+
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.17;
+	text-align: center;
+}
+
+.images-wedo {
+	display: flex;
+}
+
+.images-wedo .item:not(:last-child) {
+	margin-right: 30px;
+}
+
+/* .images-wedo .item + .item {
+	margin-left: 30px;
+} */
+
+.images-wedo img {
+	display: block;
+}
+
+.images-wedo .thumb {
+	position: relative;
+}
+
+.images-wedo .thumb::before {
+	position: absolute;
+	bottom: 0px;
+
+	/* opacity: 0; */
+
+	/* display: inline-block; */
+
+	content: "";
+	width: 370px;
+	height: 70px;
+
+	background-color: var(--wedo-back-color);
+}
+
+.images-wedo .title {
+	position: absolute;
+	bottom: 27px;
+
+	/*   */
+	pointer-events: none;
+
+	/* opacity: 0; */
+
+	/* padding: 27px; */
+	margin: 0px;
+	/* align-items: center; */
+	/* justify-content: center; */
+
+	color: #ffffff;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	text-align: center;
+	text-transform: uppercase;
+
+	width: 370px;
+}
+
+/* .thumb:hover .title,
+.thumb:hover::before {
+	opacity: 1;
+} */
+
+/* .images-wedo .item {
+	position: relative;
+} */
+
+/* .images-wedo .item::before {
+	position: absolute;
+	bottom: 0px;
+
+	display: inline-block;
+
+	content: "";
+	width: 370px;
+	height: 70px;
+
+	background-color: tomato;
+} */

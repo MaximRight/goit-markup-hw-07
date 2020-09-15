@@ -35,6 +35,7 @@ body {
   color: var(--primary-text-color);
   font-family: roboto, sans-serif;
   letter-spacing: 0.03em;
+  padding-top: 80px;
 }
 
 .section {
@@ -118,10 +119,6 @@ a {
 }
 
 /* BODY */
-.body {
-  padding-top: 80px;
-}
-
 /* PAGE HEADER */
 .page-header {
   position: fixed;
