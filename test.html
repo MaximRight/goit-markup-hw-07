@@ -15,19 +15,85 @@
 		<link rel="stylesheet" href="./css/styles.css" />
 	</head>
 	<body>
-		<a href="##"
-			><svg width="40" height="52">
-				<use href="./images/logo2mod.svg"></use>
-			</svg>
-		</a>
+		<form class="form js-speaker-form" autocomplete="on">
+			<ul>
+				<li
+					><span class="form-label"> Имя</span>
+					<label class="input-field">
+						<input
+							autofocus
+							type="text"
+							name="name"
+							class="form-input"
+							placeholder=" "
+							autocomplete="on"
+						/>
 
-		<!-- Тестовые кнопки -->
-		<input type="checkbox" checked />
-		<input type="checkbox" />
-		<input type="checkbox" />
-		<button class="button-submit">Кнопка</button>
+						<svg class="icon-form" width="18" height="18">
+							<use href="./images/sprite-new.svg#icon-modal-name"></use>
+						</svg>
+					</label>
+				</li>
 
-		<div class="astroboy"></div>
+				<li
+					><span class="form-label">Телефон</span>
+					<label class="input-field">
+						<input
+							aut
+							type="tel"
+							name="tel"
+							class="form-input"
+							placeholder=" "
+							autocomplete="on"
+						/>
+						<svg class="icon-form" width="18" height="18">
+							<use href="./images/sprite-new.svg#icon-modal-tel"></use>
+						</svg> </label
+				></li>
+
+				<li
+					><span class="form-label">Почта</span>
+					<label class="input-field">
+						<input
+							type="email"
+							name="mail"
+							class="form-input"
+							placeholder=" "
+							autocomplete="on"
+						/>
+						<svg class="icon-form" width="18" height="18">
+							<use href="./images/sprite-new.svg#icon-modal-email"></use>
+						</svg> </label
+				></li>
+			</ul>
+
+			<label class="comment-field">
+				<span class="form-label">Комментарий</span>
+				<textarea
+					class="comment"
+					name="comment"
+					id="comment"
+					rows="7"
+					placeholder="Введите текст"
+				></textarea>
+			</label>
+
+			<label class="label-checkbox">
+				<input
+					type="checkbox"
+					name="policy"
+					value="agreement"
+					class="checkbox"
+				/>
+				<span class="icon-check"></span>
+				<span class="form-text"
+					>Соглашаюсь с рассылкой и принимаю
+					<a href="" class="link-checkbox">Условия договора</a>
+				</span>
+			</label>
+
+			<button type="submit" class="button-submit" disabled>Отправить</button>
+		</form>
 	</body>
 
 	<script>
