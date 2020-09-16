@@ -1,4 +1,5 @@
 /* прячет из разметки, но оставляет для читалок */
+
 %visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -16,4 +17,10 @@
 
 %no-top-padding {
 	padding-top: 0px;
+}
+
+%flex-centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

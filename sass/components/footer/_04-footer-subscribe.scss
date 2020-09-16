@@ -3,23 +3,15 @@
 .container-subscribe {
 	width: 570px;
 	height: 80px;
-
-	padding-left: 0px;
-	padding-right: 0px;
 }
 
 .form-subscribe {
-	display: flex;
-	align-items: center;
-
-	.text {
-		margin-right: 10px;
-	}
+	@include flex-center();
+	height: 50px;
 }
 
 .form-subscribe .email {
 	width: 358px;
-	height: 50px;
 	padding: 15px 16px;
 
 	margin-right: 12px;
@@ -38,32 +30,26 @@
 }
 
 .form-subscribe .button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
+	@include flex-center();
 	width: 200px;
-	height: 50px;
 	padding: 10px 28px;
 	color: $white-color;
 	background-color: $accent-color;
 
+	@include btn-font();
+
 	box-shadow: $footer-box-shadow;
 	border: 1px solid transparent;
 	border-radius: 4px;
-
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 1.87;
-
-	letter-spacing: 0.06em;
 
 	transition: background-color $transition-time $transition-function;
 
 	&:hover,
 	&:focus {
 		background-color: $btn-hover-color;
+	}
+
+	.text {
+		margin-right: 10px;
 	}
 }

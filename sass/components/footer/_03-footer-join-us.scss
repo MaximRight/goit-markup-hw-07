@@ -1,33 +1,17 @@
 /* FOOTER JOIN US */
 
 .container-footer.join-us {
-	padding-left: 0px;
-	padding-right: 0px;
 	margin-right: 93px;
 }
 
-.title-footer {
-	display: block;
-
-	margin-top: 0px;
-	margin-bottom: 20px;
-	color: $white-color;
-	text-transform: uppercase;
-
-	font-weight: 700;
-	font-size: 14px;
-	line-height: 1.14;
-	letter-spacing: 0.03em;
+.list-footer {
+	@include flex-center();
 }
 
-.list-footer {
+.list-footer .item {
 	display: flex;
 
-	.item {
-		display: flex;
-	}
-
-	.item:not(:last-child) {
+	&:not(:last-child) {
 		margin-right: 10px;
 	}
 }

@@ -6,15 +6,30 @@
 }
 
 @import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/placeholders";
 @import "./base/normalize";
 @import "./utils/globals";
-@import "./components/header/header";
+@import "./components/header/01-header";
 @import "./components/common/logo";
-@import "./components/header/header-site-nav";
-@import "./components/header/header-contacts";
+@import "./components/header/02-header-site-nav";
+@import "./components/header/03-header-contacts";
 
-@import "./components/footer/footer";
-@import "./components/footer/footer-address";
-@import "./components/footer/footer-join-us";
-@import "./components/footer/footer-subscribe";
-@import "./components/footer/footer-copyright";
+@import "./components/index-main/01-main-hero";
+@import "./components/index-main/02-main-features";
+@import "./components/index-main/03-main-wedo";
+@import "./components/index-main/04-main-team";
+// @import "./components/index-main/05-main-clients";
+// @import "./components/index-main/06-main-modal";
+
+@import "./components/footer/01-footer";
+@import "./components/footer/02-footer-address";
+@import "./components/footer/03-footer-join-us";
+@import "./components/footer/04-footer-subscribe";
+@import "./components/footer/05-footer-copyright";
+
+// @import "./components/modal/01-modal";
+// @import "./components/modal/02-form";
+// @import "./components/modal/03-checkbox";
+// @import "./components/modal/04-btn-submit";
+// @import "./components/modal/05-btn-close";

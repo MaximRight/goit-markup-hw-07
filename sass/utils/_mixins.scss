@@ -11,3 +11,58 @@
 @mixin mrgn-btm($margin: 30px) {
 	margin-bottom: $margin;
 }
+
+@mixin container($ml: auto, $mr: auto, $pl: 15px, $pr: 15px, $width: 1200px) {
+	margin-left: $ml;
+	margin-right: $mr;
+	padding-left: $pl;
+	padding-right: $pr;
+	width: $width;
+}
+
+@mixin no-flex-center($ml: auto, $mr: auto) {
+	margin-left: $ml;
+	margin-right: $mr;
+}
+
+@mixin header-font() {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.02em;
+	text-decoration: none;
+}
+
+@mixin footer-feature-font($color: $primary-text-color) {
+	font-style: normal;
+	font-size: 14px;
+	line-height: 1.71;
+	color: $color;
+}
+
+@mixin title-font() {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.17;
+	text-align: center;
+	color: $title-text-color;
+}
+
+@mixin subtitle-font($color: $title-text-color, $transform: uppercase) {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.03em;
+	color: $color;
+	text-transform: $transform;
+}
+
+@mixin btn-font() {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.87;
+
+	letter-spacing: 0.06em;
+}

@@ -727,7 +727,7 @@ opacity: 1;
 }
 
 /* если несколько кнопок то в главном селекторе выстраивается шрифты и рамки и так далее, а во второстепенных .button.primary .button.secondary - выстраиваются отличающиеся цвета */
-/* Portfolio */
+/* PORTFOLIO*/
 /* .portfolio-list img {
 	display: block;
 } */

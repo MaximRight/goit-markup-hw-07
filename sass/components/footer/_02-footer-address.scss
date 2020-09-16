@@ -7,11 +7,7 @@
 }
 
 .address .location {
-	color: $white-color;
-
-	font-style: normal;
-	font-size: 14px;
-	line-height: 1.71;
+	@include footer-feature-font($color: $white-color);
 }
 
 .address .location,
@@ -21,11 +17,7 @@
 }
 
 .address .title {
-	color: rgba(255, 255, 255, 0.6);
-
-	font-style: normal;
-	font-size: 14px;
-	line-height: 1.71;
+	@include footer-feature-font($footer-links-color);
 	text-decoration: none;
 
 	transition: color $transition-time $transition-function;

@@ -1,14 +1,13 @@
 /* SITE NAV!!!*/
 
 .navbar {
-	display: flex;
-	align-items: center;
+	@include flex-center();
+	margin-right: auto;
 }
 
 .site-nav {
-	display: flex;
+	@include flex-center();
 	/* outline: 1px solid tomato; */
-	margin-left: 93px;
 }
 
 .site-nav .item:not(:last-child) {
@@ -24,11 +23,7 @@
 
 	color: $title-text-color;
 
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 1.14;
-	letter-spacing: 0.02em;
-	text-decoration: none;
+	@include header-font();
 
 	transition: color $transition-time $transition-function;
 
@@ -36,20 +31,20 @@
 	&:focus {
 		color: $accent-color;
 	}
-}
 
-.site-nav .link.current::after {
-	content: "";
+	&.current::after {
+		content: "";
 
-	position: absolute;
-	left: 0;
-	bottom: 0;
+		position: absolute;
+		left: 0;
+		bottom: 0;
 
-	display: block;
+		display: block;
 
-	width: 100%;
-	height: 4px;
-	border-radius: 2px;
+		width: 100%;
+		height: 4px;
+		border-radius: 2px;
 
-	background-color: $accent-color;
+		background-color: $accent-color;
+	}
 }

@@ -56,10 +56,42 @@ h5 {
 
 // Контейнер для центровки контента
 .container {
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-	width: 1200px;
+	@include container();
+
 	/* outline: 2px solid tomato; */
+}
+
+.flexbox {
+	@include flex-center();
+}
+
+// Заголовки в секциях
+.section-title {
+	margin-top: 0px;
+	margin-bottom: 50px;
+
+	@include title-font();
+}
+
+// Заголовки/к действия в футере
+.footer-title {
+	display: block;
+
+	margin-top: 0px;
+	margin-bottom: 20px;
+	color: $white-color;
+	text-transform: uppercase;
+
+	@include subtitle-font($color: $white-color);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 }

@@ -1,0 +1,119 @@
+/*       -------АНКЕТА В МОДАЛКЕ!!!!------------ */
+
+.modal .title {
+	margin: 0px 0px 12px 0px;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+	color: var(--title-text-color);
+}
+
+.form {
+	width: 448px;
+	/* outline: 1px solid tomato; */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form .form-label {
+	margin-bottom: 4px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.16;
+
+	letter-spacing: 0.01em;
+}
+
+.input-field {
+	display: inline-block;
+	position: relative;
+
+	width: 448px;
+
+	/* outline: 1px solid blue; */
+	margin-bottom: 10px;
+}
+
+.input-field .form-input {
+	height: 40px;
+	margin: 0px;
+	padding: 12px 40px;
+
+	width: 100%;
+
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 1.16;
+	letter-spacing: 0.01em;
+}
+
+.form-input:hover {
+	border: 1px solid rgba(33, 33, 33, 0.7);
+}
+
+.test-field {
+	position: relative;
+}
+
+.form .item {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.input-field .icon-form {
+	position: absolute;
+	top: 50%;
+	left: 12px;
+
+	transform: translateY(-50%);
+}
+
+.input-field:focus-within .icon-form {
+	fill: var(--accent-color);
+}
+
+.form-input:focus {
+	outline: transparent;
+	border: 1px solid var(--accent-color);
+}
+
+.comment-field {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.comment {
+	padding: 12px 16px;
+	width: 448px;
+
+	font-size: 12px;
+	line-height: 1.16;
+	letter-spacing: 0.01em;
+
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+}
+
+.comment:hover {
+	border: 1px solid rgba(33, 33, 33, 0.7);
+}
+
+.comment:focus {
+	outline: transparent;
+	border: 1px solid var(--accent-color);
+}
+
+.comment-field textarea::placeholder {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.16;
+	letter-spacing: 0.01em;
+
+	color: rgba(117, 117, 117, 0.5);
+}

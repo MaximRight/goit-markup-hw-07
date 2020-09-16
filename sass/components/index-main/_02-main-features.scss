@@ -1,82 +1,47 @@
 /* FEATURES НАШИ ПРЕИМУЩЕСТВА */
 
 .container.icons {
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-	width: 1200px;
+	@include container();
 	height: 251px;
-	/* outline: 2px solid tomato; */
+	outline: 2px solid tomato;
 }
 
 .feature-list {
-	margin-top: 0px;
-
-	display: flex;
+	@include flex-center();
 }
 
 .feature-list .item {
 	width: 270px;
-	height: 101px;
+
+	&::before {
+		display: block;
+		content: "";
+		height: 120px;
+		margin-bottom: 30px;
+		background-color: $button-bcg;
+		background-size: 70px;
+		background-repeat: no-repeat;
+		background-position: center;
+		border-radius: 4px;
+	}
 }
 
-/* Репета рекомендует лучше давать доп класс в хтмл,
-и оттуда назначать каждую иконку .feature-list не пишем,
-а упоминаем .icon-radar  */
+$items: "1" "feature1", "2" "feature2", "3" "feature3", "4" "feature4";
 
-.feature-list .item::before {
-	display: block;
-	content: "";
-	height: 120px;
-	margin-bottom: 30px;
-	background-color: var(--button-bcg);
-	background-size: 70px;
-	background-repeat: no-repeat;
-	background-position: center;
-	border-radius: 4px;
-}
-.feature-list .item:nth-child(1)::before {
-	/* filter: invert(1); */
-	background-image: url(../images/feature1.svg);
-}
-
-.feature-list .item:nth-child(2)::before {
-	background-image: url(../images/feature2.svg);
-}
-.feature-list .item:nth-child(3)::before {
-	background-image: url(../images/feature3.svg);
-}
-.feature-list .item:nth-child(4)::before {
-	background-image: url(../images/feature4.svg);
+@each $childNumber, $iconName in $items {
+	.feature-list .item:nth-child(#{$childNumber})::before {
+		background-image: url(../images/#{$iconName}.svg);
+	}
 }
 
 .feature-list .item:not(:last-child) {
 	margin-right: 30px;
 }
 
-/* классный олдскул метод марджинов! */
-
-/* .feature-list .item + .item {
-	margin-left: 30px;
-} */
-
 .feature-list .title {
-	margin-top: 0px;
-	margin-bottom: 10px;
-
-	color: var(--title-text-color);
-
-	font-weight: 700;
-	font-size: 14px;
-	line-height: 1.14;
-	text-transform: uppercase;
+	@include subtitle-font();
 }
 
-.feature-list p {
-	margin-top: 0px;
-	margin-bottom: 0px;
-
-	font-size: 14px;
-	line-height: 1.71;
+.feature-list .text {
+	@include footer-feature-font();
 }

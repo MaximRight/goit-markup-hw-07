@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=fallback");
 *,
 *::before,
 *::after {
@@ -10,6 +11,7 @@
           user-select: none;
 }
 
+/* прячет из разметки, но оставляет для читалок */
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -337,6 +339,53 @@ h5 {
   /* outline: 2px solid tomato; */
 }
 
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-title {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: #212121;
+}
+
+.footer-title {
+  display: block;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .page-header {
   position: fixed;
   top: 0;
@@ -348,33 +397,36 @@ h5 {
   border-bottom: 1px solid #ececec;
 }
 
-.nav-container {
+.container.nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  /* max-height: 80px; */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 1200px;
-  /* outline: 2px solid tomato; */
+  outline: 2px solid tomato;
 }
 
 /* LOGO */
 .logo {
+  display: block;
   font-family: "Raleway", sans-serif;
   color: #2196f3;
   font-size: 26px;
   line-height: 1.19;
   text-decoration: none;
   /* outline: 1px solid tomato; */
+}
+
+.navbar .logo {
+  margin-right: 93px;
+}
+
+.footbar .logo {
+  margin-bottom: 20px;
 }
 
 .logo-header {
@@ -391,17 +443,26 @@ h5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: auto;
 }
 
 .site-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /* outline: 1px solid tomato; */
-  margin-left: 93px;
 }
 
 .site-nav .item:not(:last-child) {
@@ -440,26 +501,16 @@ h5 {
 }
 
 /* CONTACTS !!!!!!!!!*/
-.contacts-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 1200px;
-}
-
 .contacts-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contacts-nav .item:not(:last-child) {
@@ -470,6 +521,9 @@ h5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -483,12 +537,295 @@ h5 {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.contacts-nav .link:hover, .contacts-nav .link:focus {
+  color: #2196f3;
+}
+
 .contacts-nav .link .icon {
   margin-right: 10px;
 }
 
-.contacts-nav .link:hover, .contacts-nav .link:focus {
-  color: #2196f3;
+/* HERO css */
+.hero {
+  padding-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 1600px;
+  height: 600px;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/background.jpg);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #2f303a;
+}
+
+.hero-container {
+  width: 696px;
+  display: inline-block;
+}
+
+.hero-title {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  /* outline: 1px solid tomato; */
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 4px;
+  min-width: 204px;
+  border: 4px solid transparent;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  background-color: #2196f3;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #188ce8;
+}
+
+/* FEATURES НАШИ ПРЕИМУЩЕСТВА */
+.container.icons {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 1200px;
+  height: 251px;
+  outline: 2px solid tomato;
+}
+
+.feature-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feature-list .item {
+  width: 270px;
+}
+
+.feature-list .item::before {
+  display: block;
+  content: "";
+  height: 120px;
+  margin-bottom: 30px;
+  background-color: #f5f4fa;
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+}
+
+.feature-list .item:nth-child(1)::before {
+  background-image: url(../images/feature1.svg);
+}
+
+.feature-list .item:nth-child(2)::before {
+  background-image: url(../images/feature2.svg);
+}
+
+.feature-list .item:nth-child(3)::before {
+  background-image: url(../images/feature3.svg);
+}
+
+.feature-list .item:nth-child(4)::before {
+  background-image: url(../images/feature4.svg);
+}
+
+.feature-list .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.feature-list .title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: #212121;
+  text-transform: uppercase;
+}
+
+.feature-list .text {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  color: #757575;
+}
+
+/* WHAT WE DO СЕКЦИЯ ЧЕМ ЗАНИМАЕМСЯ!! and Team Headers*/
+.images-wedo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.images-wedo .item {
+  width: calc((100% - 2 * 30px) / 3);
+}
+
+.images-wedo .item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+.images-wedo .item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+.images-wedo .thumb {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.images-wedo .thumb::before {
+  position: absolute;
+  content: "";
+  bottom: 0%;
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.images-wedo .title {
+  position: absolute;
+  text-align: center;
+  bottom: 27px;
+  pointer-events: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* TEAM PHOTOS AND LINKS!!!*/
+.section.team {
+  background-color: var(--button-bcg);
+}
+
+/* calc (100% - кол-во марджинов в строке * значение марджина / количество элементов в строке) */
+.team-members {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.team-members > .item {
+  width: calc((100% - 3 * 30px) / 4);
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 4px 4px;
+  /* height: 428px; */
+  /* outline: 1px solid tomato; */
+}
+
+.team-members > .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-members .title {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: var(--title-text-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  /* outline: 1px solid tomato; */
+}
+
+.team-members .text {
+  margin-top: 0px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.19;
+  /* outline: 1px solid tomato; */
+}
+
+.team-list.links {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  /* outline: 1px solid black; */
+}
+
+/* надо поставить дисплей блок??? */
+.team-list .link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0px;
+  width: 44px;
+  height: 44px;
+  color: #afb1b8;
+  border-radius: 50%;
+  -webkit-transition: color var(--transition-time) var(--transition-function), background-color var(--transition-time) var(--transition-function);
+  transition: color var(--transition-time) var(--transition-function), background-color var(--transition-time) var(--transition-function);
+  /* background-color: yellow; */
+}
+
+.icon {
+  fill: currentColor;
+}
+
+.team-list .link:hover {
+  color: var(--white-color);
+  background-color: var(--accent-color);
+  /* если убрать fill: currentcolor из иконки, тогда заливаем в ссылке сразу и при ховере */
+  /* fill: tomato; */
+}
+
+.team-list .item:not(:last-child) {
+  margin-right: 10px;
 }
 
 /* FOOTER */
@@ -498,15 +835,13 @@ h5 {
   background-color: #2f303a;
 }
 
-.footbar .logo {
-  display: block;
-  margin-bottom: 20px;
-}
-
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -514,8 +849,8 @@ h5 {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 60px;
   width: 1200px;
+  padding-top: 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   /* outline: 2px solid tomato; */
 }
@@ -527,10 +862,10 @@ h5 {
 }
 
 .address .location {
-  color: #ffffff;
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
+  color: #ffffff;
 }
 
 .address .location,
@@ -540,10 +875,10 @@ h5 {
 }
 
 .address .title {
-  color: rgba(255, 255, 255, 0.6);
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -555,27 +890,19 @@ h5 {
 
 /* FOOTER JOIN US */
 .container-footer.join-us {
-  padding-left: 0px;
-  padding-right: 0px;
   margin-right: 93px;
-}
-
-.title-footer {
-  display: block;
-  margin-top: 0px;
-  margin-bottom: 20px;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
 }
 
 .list-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .list-footer .item {
@@ -625,26 +952,23 @@ h5 {
 .container-subscribe {
   width: 570px;
   height: 80px;
-  padding-left: 0px;
-  padding-right: 0px;
 }
 
 .form-subscribe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.form-subscribe .text {
-  margin-right: 10px;
+  height: 50px;
 }
 
 .form-subscribe .email {
   width: 358px;
-  height: 50px;
   padding: 15px 16px;
   margin-right: 12px;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -663,33 +987,36 @@ h5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 200px;
-  height: 50px;
   padding: 10px 28px;
   color: #ffffff;
   background-color: #2196f3;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: 1px solid transparent;
-  border-radius: 4px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid transparent;
+  border-radius: 4px;
   -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-subscribe .button:hover, .form-subscribe .button:focus {
   background-color: #188ce8;
+}
+
+.form-subscribe .button .text {
+  margin-right: 10px;
 }
 
 /* ФЕНЕЧКА */
@@ -700,6 +1027,9 @@ h5 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0px;
   padding: 15px;
   /* border-top: 1px solid rgba(255, 255, 255, 0.1); */

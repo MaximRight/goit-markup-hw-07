@@ -1,0 +1,44 @@
+/* BUTTON SUBMIT */
+
+.form .button-submit:disabled {
+	background-color: gray;
+}
+
+.form .button-submit:disabled:hover {
+	background-color: gray;
+}
+
+.form .button-submit {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+	justify-content: center;
+
+	width: 200px;
+	height: 50px;
+	padding: 10px 55px;
+	color: var(--white-color);
+	background-color: var(--accent-color);
+
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border: 1px solid transparent;
+	border-radius: 4px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.87;
+
+	letter-spacing: 0.06em;
+	outline: transparent;
+}
+
+.form .button-submit:hover {
+	background-color: #1e8ce6;
+}
+
+.form .button-submit:active {
+	background-color: #1e8ce6dc;
+}

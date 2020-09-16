@@ -6,12 +6,12 @@
 		<title>Студия</title>
 
 		<!-- Шрифты -->
-		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-		<link
+		<!-- <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin /> -->
+		<!-- <link
 			href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=fallback"
 			rel="stylesheet"
-		/>
+		/> -->
 		<!-- Нормализатор стилей -->
 		<link
 			rel="stylesheet"
@@ -19,14 +19,14 @@
 		/>
 
 		<!-- Мои стили -->
-		<link rel="stylesheet" href="./css/main.css" />
+		<link rel="stylesheet" href="./css/main.min.css" />
 	</head>
 
 	<body class="body">
 		<!-- Шапка сайта -->
 		<header class="page-header">
 			<!-- Нав - это всегда про ссылки на секции этой или других страниц -->
-			<div class="nav-container">
+			<div class="container nav">
 				<nav class="navbar">
 					<!-- Логотип, всегда ссылка -->
 					<a href="./index.html" class="logo">
@@ -93,28 +93,28 @@
 						<!-- тут можно было бы поставить к item .icon-radar -->
 						<li class="item">
 							<h3 class="title"> Внимание к деталям </h3>
-							<p>
+							<p class="text">
 								Идейные соображения, а также начало повседневной работы по
 								формированию позиции.
 							</p>
 						</li>
 						<li class="item">
 							<h3 class="title"> Пунктуальность </h3>
-							<p>
+							<p class="text">
 								Задача организации, в особенности же рамки и место обучения
 								кадров влечет за собой.
 							</p>
 						</li>
 						<li class="item">
 							<h3 class="title">Планирование</h3>
-							<p>
+							<p class="text">
 								Равным образом консультация с широким активом в значительной
 								степени обуславливает.
 							</p>
 						</li>
 						<li class="item">
 							<h3 class="title"> Современные технологии </h3>
-							<p>
+							<p class="text">
 								Значимость этих проблем настолько очевидна, что реализация
 								плановых заданий.
 							</p>
@@ -417,7 +417,6 @@
 								><span class="form-label"> Имя</span>
 								<label class="input-field">
 									<input
-										autofocus
 										type="text"
 										name="name"
 										class="form-input"
@@ -528,7 +527,7 @@
 
 				<!-- FOOTER JOIN US  -->
 				<div class="container-footer join-us">
-					<b class="title-footer"> присоединяйтесь </b>
+					<b class="footer-title"> присоединяйтесь </b>
 					<ul class="list-footer">
 						<li class="item">
 							<a href="##" class="link"></a>
@@ -547,7 +546,7 @@
 
 				<!-- FOOTER SUBSCRIBE!!! -->
 				<div class="container-subscribe">
-					<b class="title-footer">подпишитесь на рассылку</b>
+					<b class="footer-title">подпишитесь на рассылку</b>
 
 					<form class="form-subscribe">
 						<label for="email"></label>
@@ -572,53 +571,7 @@
 		</footer>
 
 		<script src="./js/modal.js"></script>
-
-		<!-- Кнопка Отправить Данные в Модалке - отображает данные в консоли -->
-		<!-- <script>
-			;(() => {
-				document
-					.querySelector(".js-speaker-form")
-					.addEventListener("submit", e => {
-						e.preventDefault()
-
-						new FormData(e.currentTarget).forEach((value, name) =>
-							console.log(`${name}: ${value}`),
-						)
-
-						e.currentTarget.reset()
-					})
-			})()
-		</script> -->
-
-		<!-- Кнопка должна быть выключенной, пока не отмечен чекбокс -->
-		<script>
-			const inputs = document.querySelectorAll("input[type=checkbox]")
-			const button = document.querySelector(".button-submit")
-
-			function check() {
-				button.disabled = true
-				inputs.forEach(input => {
-					if (input.checked) button.disabled = false
-					// else {
-					// 	button.disabled = true
-					// }
-				})
-			}
-
-			inputs.forEach(input => input.addEventListener("change", check))
-		</script>
-
-		<!-- Отступ у body подстраивается под размер Хедера -->
-		<script>
-			console.log(
-				document.querySelector(".page-header").getBoundingClientRect().height,
-			)
-
-			const { height: pageHeaderHeight } = document
-				.querySelector(".page-header")
-				.getBoundingClientRect()
-
-			document.body.style.paddingTop = `${pageHeaderHeight}px`
-		</script>
+		<script src="./js/btn-disable.js"></script>
+		<script src="./js/auto-header.js"></script>
 	</body>
 </html>
