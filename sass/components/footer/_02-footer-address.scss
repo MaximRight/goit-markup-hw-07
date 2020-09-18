@@ -7,7 +7,7 @@
 }
 
 .address .location {
-	@include footer-feature-font($color: $white-color);
+	@include footer-feature-checkbox-font($color: $white-color);
 }
 
 .address .location,
@@ -17,7 +17,7 @@
 }
 
 .address .title {
-	@include footer-feature-font($footer-links-color);
+	@include footer-feature-checkbox-font($footer-links-color);
 	text-decoration: none;
 
 	transition: color $transition-time $transition-function;

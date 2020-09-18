@@ -32,6 +32,10 @@
 		color: $accent-color;
 	}
 
+	&.current {
+		color: $accent-color;
+	}
+
 	&.current::after {
 		content: "";
 

@@ -1,7 +1,7 @@
 /* CONTACTS !!!!!!!!!*/
 
 .contacts-nav {
-	@include flex-center();
+	display: flex;
 }
 
 .contacts-nav .item:not(:last-child) {

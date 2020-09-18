@@ -2,11 +2,28 @@
 	display: $display;
 }
 
-@mixin flex-center($display: flex, $content: center, $items: center) {
+@mixin flex-center(
+	$display: flex,
+	$content: center,
+	$items: center,
+	$wrap: wrap
+) {
 	display: $display;
 	justify-content: $content;
 	align-items: $items;
+	flex-wrap: $wrap;
 }
+
+@mixin no-flex-center($ml: auto, $mr: auto) {
+	margin-left: $ml;
+	margin-right: $mr;
+}
+
+/* ЭТО КРОССБРАУЗЕРНЫЙ ХАК ОТ РЕПЕТЫ!!! */
+/* Это на будущее, пока не поддерживается всеми браузерами */
+/* -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none; */
 
 @mixin mrgn-btm($margin: 30px) {
 	margin-bottom: $margin;
@@ -20,10 +37,7 @@
 	width: $width;
 }
 
-@mixin no-flex-center($ml: auto, $mr: auto) {
-	margin-left: $ml;
-	margin-right: $mr;
-}
+// FONTS
 
 @mixin header-font() {
 	font-weight: 500;
@@ -33,7 +47,7 @@
 	text-decoration: none;
 }
 
-@mixin footer-feature-font($color: $primary-text-color) {
+@mixin footer-feature-checkbox-font($color: $primary-text-color) {
 	font-style: normal;
 	font-size: 14px;
 	line-height: 1.71;
@@ -65,4 +79,36 @@
 	line-height: 1.87;
 
 	letter-spacing: 0.06em;
+}
+
+@mixin team-card-font($weight: 500, $color: $title-text-color) {
+	font-weight: $weight;
+	font-size: 16px;
+	line-height: 1.19;
+
+	color: $color;
+}
+
+@mixin form-title-font {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+	color: $title-text-color;
+}
+
+@mixin form-label-font {
+	font-size: 12px;
+	line-height: 1.16;
+
+	letter-spacing: 0.01em;
+}
+
+@mixin form-input-font {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.01em;
 }

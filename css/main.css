@@ -11,7 +11,67 @@
           user-select: none;
 }
 
+/* ЭТО КРОССБРАУЗЕРНЫЙ ХАК ОТ РЕПЕТЫ!!! */
+/* Это на будущее, пока не поддерживается всеми браузерами */
+/* -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none; */
 /* прячет из разметки, но оставляет для читалок */
+.checkbox-check {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox-check:checked + .icon-check {
+  border-radius: 2px;
+  border-color: transparent;
+  background-color: #2196f3;
+  background-image: url(../images/icon-check.svg);
+  background-origin: border-box;
+}
+
+.checkbox-check:checked:hover + .icon-check {
+  background-image: url(../images/icon-check.svg), -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.2)), to(rgba(47, 48, 58, 0.2)));
+  background-image: url(../images/icon-check.svg), linear-gradient(to right, rgba(47, 48, 58, 0.2), rgba(47, 48, 58, 0.2));
+}
+
+.checkbox-check:checked:active + .icon-check {
+  background-image: url(../images/icon-check.svg), -webkit-gradient(linear, left top, right top, from(rgba(233, 234, 236, 0.2)), to(rgba(233, 234, 236, 0.2)));
+  background-image: url(../images/icon-check.svg), linear-gradient(to right, rgba(233, 234, 236, 0.2), rgba(233, 234, 236, 0.2));
+}
+
+.checkbox-link {
+  border-bottom: 1px solid currentColor;
+  line-height: 0.9;
+  color: #2196f3;
+}
+
+.btn, .form .button-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffff;
+  background-color: #2196f3;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -349,6 +409,8 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .section-title {
@@ -386,6 +448,10 @@ h5 {
   overflow: hidden;
 }
 
+.no-top-padding {
+  padding-top: 0px;
+}
+
 .page-header {
   position: fixed;
   top: 0;
@@ -407,6 +473,8 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   outline: 2px solid tomato;
 }
 
@@ -449,6 +517,8 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-right: auto;
 }
 
@@ -462,6 +532,8 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   /* outline: 1px solid tomato; */
 }
 
@@ -488,6 +560,10 @@ h5 {
   color: #2196f3;
 }
 
+.site-nav .link.current {
+  color: #2196f3;
+}
+
 .site-nav .link.current::after {
   content: "";
   position: absolute;
@@ -505,12 +581,6 @@ h5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .contacts-nav .item:not(:last-child) {
@@ -527,6 +597,8 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   color: #757575;
   font-weight: 500;
   font-size: 14px;
@@ -578,21 +650,14 @@ h5 {
 }
 
 .btn {
-  display: inline-block;
-  padding: 10px 32px;
-  border-radius: 4px;
-  min-width: 204px;
-  border: 4px solid transparent;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  color: #ffffff;
-  background-color: #2196f3;
   font-family: Roboto;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+  padding: 10px 32px;
+  min-width: 204px;
   -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -603,7 +668,7 @@ h5 {
 }
 
 /* FEATURES НАШИ ПРЕИМУЩЕСТВА */
-.container.icons {
+.feature.container {
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
@@ -623,10 +688,12 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .feature-list .item {
-  width: 270px;
+  width: calc((100% - 3 * 30px) / 4);
 }
 
 .feature-list .item::before {
@@ -639,6 +706,14 @@ h5 {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 4px;
+}
+
+.feature-list .item:not(:nth-child(4n)) {
+  margin-right: 30px;
+}
+
+.feature-list .item:not(:nth-last-child(-n + 4)) {
+  margin-bottom: 30px;
 }
 
 .feature-list .item:nth-child(1)::before {
@@ -657,10 +732,6 @@ h5 {
   background-image: url(../images/feature4.svg);
 }
 
-.feature-list .item:not(:last-child) {
-  margin-right: 30px;
-}
-
 .feature-list .title {
   font-weight: 700;
   font-size: 14px;
@@ -668,6 +739,7 @@ h5 {
   letter-spacing: 0.03em;
   color: #212121;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .feature-list .text {
@@ -715,6 +787,8 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .images-wedo .thumb::before {
@@ -728,9 +802,7 @@ h5 {
 
 .images-wedo .title {
   position: absolute;
-  text-align: center;
   bottom: 27px;
-  pointer-events: none;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -741,48 +813,68 @@ h5 {
 
 /* TEAM PHOTOS AND LINKS!!!*/
 .section.team {
-  background-color: var(--button-bcg);
+  background-color: #f5f4fa;
 }
 
-/* calc (100% - кол-во марджинов в строке * значение марджина / количество элементов в строке) */
 .team-members {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .team-members > .item {
   width: calc((100% - 3 * 30px) / 4);
   padding-bottom: 30px;
   text-align: center;
-  background-color: #fff;
+  background-color: #ffffff;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 4px 4px;
-  /* height: 428px; */
   /* outline: 1px solid tomato; */
 }
 
-.team-members > .item:not(:last-child) {
+.team-members > .item:not(:nth-child(4n)) {
   margin-right: 30px;
+}
+
+.team-members > .item:not(:nth-last-child(-n + 4)) {
+  margin-bottom: 30px;
+}
+
+.team-members .image {
+  margin-bottom: 30px;
 }
 
 .team-members .title {
   margin-top: 0px;
   margin-bottom: 10px;
-  color: var(--title-text-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
+  color: #212121;
   /* outline: 1px solid tomato; */
 }
 
 .team-members .text {
   margin-top: 0px;
   margin-bottom: 16px;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.19;
+  color: #757575;
   /* outline: 1px solid tomato; */
+}
+
+.team-list .item:not(:last-child) {
+  margin-right: 10px;
 }
 
 .team-list.links {
@@ -792,40 +884,83 @@ h5 {
   /* outline: 1px solid black; */
 }
 
-/* надо поставить дисплей блок??? */
 .team-list .link {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 44px;
   height: 44px;
   color: #afb1b8;
   border-radius: 50%;
-  -webkit-transition: color var(--transition-time) var(--transition-function), background-color var(--transition-time) var(--transition-function);
-  transition: color var(--transition-time) var(--transition-function), background-color var(--transition-time) var(--transition-function);
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* background-color: yellow; */
 }
 
-.icon {
-  fill: currentColor;
-}
-
 .team-list .link:hover {
-  color: var(--white-color);
-  background-color: var(--accent-color);
+  color: #ffffff;
+  background-color: #2196f3;
   /* если убрать fill: currentcolor из иконки, тогда заливаем в ссылке сразу и при ховере */
   /* fill: tomato; */
 }
 
-.team-list .item:not(:last-child) {
-  margin-right: 10px;
+/* OUR CLIENTS*/
+.clients-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.clients-list .item:nth-child(2) .icon {
+  -webkit-filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.2));
+}
+
+.clients-list .link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 170px;
+  height: 90px;
+  color: #afb1b8;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  -webkit-transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clients-list .link:hover, .clients-list .link:focus {
+  color: #2196f3;
+  border: 1px solid #2196f3;
+}
+
+.clients-list .icon {
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* FOOTER */
@@ -845,6 +980,8 @@ h5 {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
@@ -903,6 +1040,8 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .list-footer .item {
@@ -964,6 +1103,8 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   height: 50px;
 }
 
@@ -993,6 +1134,8 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: none;
+      flex-wrap: none;
   width: 200px;
   padding: 10px 28px;
   color: #ffffff;
@@ -1030,8 +1173,307 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0px;
   padding: 15px;
   /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+/* ---------МОДАЛКА ВСПЛЫВАЮЩАЯ!!!!------------ */
+.backdrop {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  -webkit-transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%) scale(0.1);
+          transform: translate(-50%, -100%) scale(0.1);
+  opacity: 0;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 20%) scale(1);
+          transform: translate(-50%, 20%) scale(1);
+  width: 528px;
+  min-height: 581px;
+  padding-top: 40px;
+  background-color: white;
+  opacity: 1;
+  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+/*       -------АНКЕТА В МОДАЛКЕ!!!!------------ */
+.form {
+  width: 448px;
+  /* outline: 1px solid tomato; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form .title {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: #212121;
+}
+
+.form .item {
+  margin-bottom: 10px;
+}
+
+.form-label {
+  width: 448px;
+  /* outline: 1px solid blue; */
+}
+
+.text-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+
+.form-label .thumb {
+  position: relative;
+}
+
+.form-label .form-input {
+  height: 40px;
+  padding: 12px 40px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+}
+
+.form-label .form-input:hover {
+  border: 1px solid rgba(33, 33, 33, 0.7);
+}
+
+.form-label .form-input:focus {
+  outline: transparent;
+  border: 1px solid #2196f3;
+}
+
+.form-label .form-input:not(:placeholder-shown) {
+  border: 1px solid #2196f3;
+}
+
+.form-label .icon-form {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.form-label:focus-within .icon-form {
+  fill: #2196f3;
+}
+
+.comment-input {
+  display: block;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  width: 448px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.comment-input:hover {
+  border: 1px solid rgba(33, 33, 33, 0.7);
+}
+
+.comment-input:focus {
+  outline: transparent;
+  border: 1px solid #2196f3;
+}
+
+.comment-input::-webkit-input-placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.comment-input:-ms-input-placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.comment-input::-ms-input-placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.comment-input::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.comment-input:not(:placeholder-shown) {
+  border: 1px solid #2196f3;
+}
+
+/* CHECKBOX */
+.checkbox-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 30px;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  color: #757575;
+  /* outline: 1px solid black; */
+}
+
+.checkbox-label:hover {
+  color: rgba(33, 33, 33, 0.9);
+}
+
+.checkbox-link {
+  display: inline-block;
+}
+
+.checkbox-label:hover .checkbox-link {
+  color: rgba(33, 33, 33, 0.9);
+}
+
+.icon-check {
+  margin-right: 7px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+}
+
+.checkbox-check:not(:checked):hover + .icon-check {
+  background-color: rgba(97, 100, 102, 0.356);
+}
+
+.checkbox-check:not(:checked):active + .icon-check {
+  background-color: rgba(56, 53, 53, 0.616);
+}
+
+/* BUTTON SUBMIT */
+.form .button-submit:disabled {
+  background-color: gray;
+}
+
+.form .button-submit:disabled:hover {
+  background-color: gray;
+}
+
+.form .button-submit {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  width: 200px;
+  height: 50px;
+  outline: transparent;
+}
+
+.form .button-submit:hover {
+  background-color: #1e8ce6;
+}
+
+.form .button-submit:active {
+  background-color: #1e8ce6dc;
+}
+
+/* BUTTON CLOSE */
+.button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+  width: 31px;
+  height: 31px;
+  /* background-color: yellow; */
+  background-color: #ffffff;
+  outline: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-close:hover {
+  -webkit-transform: scale(1.2) rotate(180deg);
+          transform: scale(1.2) rotate(180deg);
+}
+
+.button-close:active {
+  fill: #2196f3;
+  stroke: #2196f3;
+  -webkit-transform: scale(1.4) rotate(180deg);
+          transform: scale(1.4) rotate(180deg);
+}
+
+.icon-close {
+  fill: #212121;
+  width: 11px;
+  height: 11px;
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+}
+
+.button-close:hover .icon-close {
+  fill: #2196f3;
 }
 /*# sourceMappingURL=main.css.map */

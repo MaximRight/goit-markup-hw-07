@@ -19,8 +19,7 @@
 @import "./components/index-main/02-main-features";
 @import "./components/index-main/03-main-wedo";
 @import "./components/index-main/04-main-team";
-// @import "./components/index-main/05-main-clients";
-// @import "./components/index-main/06-main-modal";
+@import "./components/index-main/05-main-clients";
 
 @import "./components/footer/01-footer";
 @import "./components/footer/02-footer-address";
@@ -28,8 +27,8 @@
 @import "./components/footer/04-footer-subscribe";
 @import "./components/footer/05-footer-copyright";
 
-// @import "./components/modal/01-modal";
-// @import "./components/modal/02-form";
-// @import "./components/modal/03-checkbox";
-// @import "./components/modal/04-btn-submit";
-// @import "./components/modal/05-btn-close";
+@import "./components/modal/01-backdrop-modal";
+@import "./components/modal/02-form";
+@import "./components/modal/03-checkbox";
+@import "./components/modal/04-btn-submit";
+@import "./components/modal/05-btn-close";

@@ -5,44 +5,41 @@
 	top: 8px;
 	right: 8px;
 
-	display: flex;
-	justify-content: center;
+	@include flex-center;
 
-	align-items: center;
 	padding: 0;
 	width: 31px;
 	height: 31px;
 
 	/* background-color: yellow; */
-	background-color: var(--white-color);
+	background-color: $white-color;
+
+	outline: 0px;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 50%;
 
-	transition: fill var(--transition-time) var(--transition-function),
-		transform var(--transition-time) var(--transition-function);
+	transition: fill $transition-time $transition-function,
+		transform $transition-time $transition-function;
 
-	outline: 0px;
+	&:hover {
+		transform: scale(1.2) rotate(180deg);
+	}
+
+	&:active {
+		fill: $accent-color;
+		stroke: $accent-color;
+		transform: scale(1.4) rotate(180deg);
+	}
 }
 
-.button-close .icon-form {
-	fill: var(--title-text-color);
+.icon-close {
+	fill: $title-text-color;
 	width: 11px;
 	height: 11px;
 
 	transition: transform 500ms;
-	transition: transform 500ms;
-}
 
-.button-close:hover {
-	transform: scale(1.2) rotate(180deg);
-}
-
-.button-close:hover .icon-form {
-	fill: var(--accent-color);
-}
-
-.button-close:active {
-	fill: var(--accent-color);
-	stroke: var(--accent-color);
-	transform: scale(1.4) rotate(180deg);
+	.button-close:hover & {
+		fill: $accent-color;
+	}
 }

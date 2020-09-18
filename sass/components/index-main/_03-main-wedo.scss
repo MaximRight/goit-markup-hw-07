@@ -1,19 +1,22 @@
 /* WHAT WE DO СЕКЦИЯ ЧЕМ ЗАНИМАЕМСЯ!! and Team Headers*/
 
+// .section.expertise {
+// 	@extend %no-top-padding;
+// }
+
 .images-wedo {
 	@include flex-center();
-	flex-wrap: wrap;
 }
 
 .images-wedo .item {
 	width: calc((100% - 2 * 30px) / 3);
 
 	&:not(:nth-child(3n)) {
-		margin-right: 30px;
+		margin-right: $mr;
 	}
 
 	&:not(:nth-last-child(-n + 3)) {
-		margin-bottom: 30px;
+		margin-bottom: $mb;
 	}
 }
 
@@ -36,11 +39,8 @@
 
 .images-wedo .title {
 	position: absolute;
-	text-align: center;
 
 	bottom: 27px;
-
-	pointer-events: none;
 
 	@include subtitle-font($color: $white-color);
 }
