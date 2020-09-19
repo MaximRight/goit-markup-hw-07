@@ -1,3 +1,50 @@
+@mixin body {
+	background-color: $white-color;
+	color: $primary-text-color;
+
+	font-family: roboto, sans-serif;
+	letter-spacing: 0.03em;
+}
+
+@mixin checkbox-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+@mixin checked {
+	border-radius: 2px;
+	border-color: transparent;
+	background-color: $accent-color;
+	background-image: url(../images/icon-check.svg);
+	background-origin: border-box;
+}
+
+@mixin checked-hover {
+	background-image: url(../images/icon-check.svg),
+		linear-gradient(to right, rgba(47, 48, 58, 0.2), rgba(47, 48, 58, 0.2));
+}
+
+@mixin checked-active {
+	background-image: url(../images/icon-check.svg),
+		linear-gradient(
+			to right,
+			rgba(233, 234, 236, 0.2),
+			rgba(233, 234, 236, 0.2)
+		);
+}
+
+@mixin underline {
+	border-bottom: 1px solid currentColor;
+	line-height: 0.9;
+	color: $accent-color;
+}
+
 @mixin flexbox($display: flex) {
 	display: $display;
 }
@@ -44,64 +91,6 @@
 
 // FONTS
 
-@mixin header-font() {
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 1.14;
-	letter-spacing: 0.02em;
-	text-decoration: none;
-}
-
-@mixin footer-feature-checkbox-font($color: $primary-text-color) {
-	font-style: normal;
-	font-size: 14px;
-	line-height: 1.71;
-	color: $color;
-}
-
-@mixin title-font() {
-	font-weight: 700;
-	font-size: 36px;
-	line-height: 1.17;
-	text-align: center;
-	color: $title-text-color;
-}
-
-@mixin subtitle-font($color: $title-text-color, $transform: uppercase) {
-	font-weight: 700;
-	font-size: 14px;
-	line-height: 1.14;
-	letter-spacing: 0.03em;
-	color: $color;
-	text-transform: $transform;
-}
-
-@mixin btn-font() {
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 1.87;
-
-	letter-spacing: 0.06em;
-}
-
-@mixin team-card-font($weight: 500, $color: $title-text-color) {
-	font-weight: $weight;
-	font-size: 16px;
-	line-height: 1.19;
-
-	color: $color;
-}
-
-@mixin form-title-font {
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 1.15;
-	text-align: center;
-	color: $title-text-color;
-}
-
 @mixin form-label-font {
 	font-size: 12px;
 	line-height: 1.16;
@@ -118,49 +107,72 @@
 	letter-spacing: 0.01em;
 }
 
-@mixin body {
-	background-color: $white-color;
-	color: $primary-text-color;
+@mixin header-font() {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.02em;
+	text-decoration: none;
+}
 
-	font-family: roboto, sans-serif;
+@mixin subtitle-font($color: $title-text-color, $transform: uppercase) {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
 	letter-spacing: 0.03em;
+	color: $color;
+	text-transform: $transform;
 }
 
-@mixin checkbox-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	clip: rect(0 0 0 0);
-	overflow: hidden;
+@mixin footer-feature-checkbox-font($color: $primary-text-color) {
+	font-style: normal;
+	font-size: 14px;
+	line-height: 1.71;
+	color: $color;
 }
 
-@mixin checked {
-	border-radius: 2px;
-	border-color: transparent;
-	background-color: $accent-color;
-	background-image: url(../images/icon-check.svg);
-	background-origin: border-box;
+@mixin team-card-font($weight: 500, $height: 1.19, $color: $title-text-color) {
+	font-weight: $weight;
+	font-size: 16px;
+	line-height: $height;
+
+	color: $color;
 }
 
-@mixin checked-hover {
-	background-image: url(../images/icon-check.svg),
-		linear-gradient(to right, rgba(47, 48, 58, 0.2), rgba(47, 48, 58, 0.2));
+@mixin filter-font {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.62;
 }
 
-@mixin checked-active {
-	background-image: url(../images/icon-check.svg),
-		linear-gradient(
-			to right,
-			rgba(233, 234, 236, 0.2),
-			rgba(233, 234, 236, 0.2)
-		);
+@mixin btn-font($size: 16px, $height: 1.87) {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	font-size: $size;
+	line-height: $height;
+
+	letter-spacing: 0.06em;
 }
 
-@mixin underline {
-	border-bottom: 1px solid currentColor;
-	line-height: 0.9;
-	color: $accent-color;
+@mixin thumb-text-font {
+	font-weight: 400px;
+	font-size: 18px;
+	line-height: 1.56;
+}
+
+@mixin form-title-font {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+	color: $title-text-color;
+}
+
+@mixin title-font() {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.17;
+	text-align: center;
+	color: $title-text-color;
 }
