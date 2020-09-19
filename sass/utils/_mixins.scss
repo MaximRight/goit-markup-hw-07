@@ -14,16 +14,21 @@
 	flex-wrap: $wrap;
 }
 
+@mixin visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
 @mixin no-flex-center($ml: auto, $mr: auto) {
 	margin-left: $ml;
 	margin-right: $mr;
 }
-
-/* ЭТО КРОССБРАУЗЕРНЫЙ ХАК ОТ РЕПЕТЫ!!! */
-/* Это на будущее, пока не поддерживается всеми браузерами */
-/* -webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none; */
 
 @mixin mrgn-btm($margin: 30px) {
 	margin-bottom: $margin;
@@ -111,4 +116,51 @@
 	font-size: 14px;
 	line-height: 1.14;
 	letter-spacing: 0.01em;
+}
+
+@mixin body {
+	background-color: $white-color;
+	color: $primary-text-color;
+
+	font-family: roboto, sans-serif;
+	letter-spacing: 0.03em;
+}
+
+@mixin checkbox-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+@mixin checked {
+	border-radius: 2px;
+	border-color: transparent;
+	background-color: $accent-color;
+	background-image: url(../images/icon-check.svg);
+	background-origin: border-box;
+}
+
+@mixin checked-hover {
+	background-image: url(../images/icon-check.svg),
+		linear-gradient(to right, rgba(47, 48, 58, 0.2), rgba(47, 48, 58, 0.2));
+}
+
+@mixin checked-active {
+	background-image: url(../images/icon-check.svg),
+		linear-gradient(
+			to right,
+			rgba(233, 234, 236, 0.2),
+			rgba(233, 234, 236, 0.2)
+		);
+}
+
+@mixin underline {
+	border-bottom: 1px solid currentColor;
+	line-height: 0.9;
+	color: $accent-color;
 }

@@ -6,12 +6,13 @@
 		<title>Студия</title>
 
 		<!-- Шрифты -->
-		<!-- <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin /> -->
-		<!-- <link
+		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+
+		<link
 			href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=fallback"
 			rel="stylesheet"
-		/> -->
+		/>
 		<!-- Нормализатор стилей -->
 		<link
 			rel="stylesheet"
@@ -78,7 +79,7 @@
 			<section class="hero">
 				<div class="hero-container">
 					<h1 class="hero-title"> Эффективные решения для вашего бизнеса </h1>
-					<button type="button" class="btn" data-modal-open>
+					<button type="button" class="hero__button button" data-modal-open>
 						Заказать услугу
 					</button>
 				</div>
@@ -490,7 +491,7 @@
 							</span>
 						</label>
 
-						<button type="submit" class="button-submit" disabled
+						<button type="submit" class="modal__button-submit button" disabled
 							>Отправить</button
 						>
 						<button class="button-close" data-modal-close>
@@ -564,8 +565,8 @@
 							placeholder="E-mail"
 						/>
 
-						<button type="submit" class="button"
-							><span class="text">Подписаться</span>
+						<button type="submit" class="footer__button-subscribe button"
+							><span class="button__text">Подписаться</span>
 							<svg width="24px" height="24px" class="icon-footer">
 								<use href="./images/sprite-new.svg#icon-subscribe"></use>
 							</svg>

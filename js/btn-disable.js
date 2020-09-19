@@ -1,7 +1,7 @@
 // < !--Кнопка должна быть выключенной, пока не отмечен чекбокс-- >
 
 const inputs = document.querySelectorAll("input[type=checkbox]")
-const button = document.querySelector(".button-submit")
+const button = document.querySelector(".form__button-submit")
 
 function check() {
 	button.disabled = true

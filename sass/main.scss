@@ -1,17 +1,15 @@
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-	user-select: none;
-}
+// @import "./base/normalize";
 
 @import "./utils/variables";
 @import "./utils/mixins";
 @import "./utils/placeholders";
-@import "./base/normalize";
+
 @import "./utils/globals";
-@import "./components/header/01-header";
+
 @import "./components/common/logo";
+// @import "./components/common/button";
+
+@import "./components/header/01-header";
 @import "./components/header/02-header-site-nav";
 @import "./components/header/03-header-contacts";
 
@@ -32,3 +30,6 @@
 @import "./components/modal/03-checkbox";
 @import "./components/modal/04-btn-submit";
 @import "./components/modal/05-btn-close";
+
+@import "./components/portfolio-main/01_filters";
+@import "./components/portfolio-main/02_cards";

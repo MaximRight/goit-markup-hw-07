@@ -13,18 +13,18 @@
 		<!-- Нормализатор стилей -->
 		<link
 			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.7.0/modern-normalize.min.css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
 		/>
 
 		<!-- Мои Стили -->
-		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="stylesheet" href="./css/main.min.css" />
 	</head>
 
 	<body class="body">
 		<!-- Шапка сайта -->
 		<header class="page-header">
 			<!-- Нав - это всегда про ссылки на секции этой или других страниц -->
-			<div class="nav-container">
+			<div class="container nav">
 				<nav class="navbar">
 					<!-- Логотип, всегда ссылка -->
 					<a href="./index.html" class="logo">
@@ -332,7 +332,7 @@
 
 				<!-- FOOTER JOIN US  -->
 				<div class="container-footer join-us">
-					<b class="title-footer"> присоединяйтесь </b>
+					<b class="footer-title"> присоединяйтесь </b>
 					<ul class="list-footer">
 						<li class="item">
 							<a href="##" class="link"></a>
@@ -351,7 +351,7 @@
 
 				<!-- FOOTER SUBSCRIBE!!! -->
 				<div class="container-subscribe">
-					<b class="title-footer">подпишитесь на рассылку</b>
+					<b class="footer-title">подпишитесь на рассылку</b>
 
 					<form class="form-subscribe">
 						<label for="email"></label>
@@ -363,16 +363,16 @@
 							placeholder="E-mail"
 						/>
 
-						<button type="submit" class="button"
-							>Подписаться
+						<button type="submit" class="footer__button-subscribe button"
+							><span class="button__text">Подписаться</span>
 							<svg width="24px" height="24px" class="icon-footer">
-								<use href="./images/sprite.svg#icon-subscribe"></use>
+								<use href="./images/sprite-new.svg#icon-subscribe"></use>
 							</svg>
 						</button>
 					</form>
 				</div>
 			</div>
-			<p class="copyright">2020 | Developed by GoIT Students</p>
+			<p lang="eng" class="copyright">2020 | Developed by GoIT Students</p>
 		</footer>
 	</body>
 </html>

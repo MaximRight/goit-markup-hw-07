@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=fallback");
+// @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=fallback");
 
 $header-stroke: #ececec;
 
@@ -11,6 +11,7 @@ $icon-color: #afb1b8;
 $accent-color: #2196f3;
 $button-bcg: #f5f4fa;
 $btn-hover-color: #188ce8;
+$btn-active-color: #1e8ce6dc;
 
 $transition-time: 250ms;
 $transition-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -22,6 +23,8 @@ $folio-border: #eeeeee;
 $footer-color: #2f303a;
 $footer-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 $footer-links-color: rgba(255, 255, 255, 0.6);
+
+$section-padding: 94px;
 
 $mr: 30px;
 $mb: 30px;

@@ -29,27 +29,10 @@
 	}
 }
 
-.form-subscribe .button {
-	@include flex-center($wrap: none);
-	width: 200px;
-	padding: 10px 28px;
-	color: $white-color;
-	background-color: $accent-color;
+.footer__button-subscribe {
+	@extend %button;
 
-	@include btn-font();
-
-	box-shadow: $footer-box-shadow;
-	border: 1px solid transparent;
-	border-radius: 4px;
-
-	transition: background-color $transition-time $transition-function;
-
-	&:hover,
-	&:focus {
-		background-color: $btn-hover-color;
-	}
-
-	.text {
+	.button__text {
 		margin-right: 10px;
 	}
 }

@@ -1,5 +1,4 @@
-/* прячет из разметки, но оставляет для читалок */
-
+// /* прячет из разметки, но оставляет для читалок */
 %visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -29,6 +28,7 @@
 	margin-bottom: 30px;
 }
 
+// Кроссбраузерный хак
 %checkbox-hidden {
 	position: absolute;
 	width: 1px;
@@ -77,11 +77,48 @@
 	margin-left: auto;
 	margin-right: auto;
 
+	width: 200px;
+	height: 50px;
+
 	color: $white-color;
 	background-color: $accent-color;
 
 	border: 1px solid transparent;
 	border-radius: 4px;
 
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	outline: transparent;
+
+	box-shadow: $footer-box-shadow;
+
+	@include btn-font;
+
+	transition: background-color $transition-time $transition-function;
+
+	&:hover,
+	&:focus {
+		background-color: $btn-hover-color;
+	}
+
+	&:active {
+		background-color: $btn-active-color;
+	}
+}
+
+%body {
+	background-color: $white-color;
+	color: $primary-text-color;
+
+	font-family: roboto, sans-serif;
+	letter-spacing: 0.03em;
+}
+
+%footer-title {
+	display: block;
+
+	margin-top: 0px;
+	margin-bottom: 20px;
+	color: $white-color;
+	text-transform: uppercase;
+
+	@include subtitle-font($color: $white-color);
 }

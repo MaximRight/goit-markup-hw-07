@@ -42,20 +42,7 @@
 	letter-spacing: 0.06em;
 }
 
-.btn {
-	// display: inline-block;
-	@extend %button;
-	@include btn-font();
-
-	padding: 10px 32px;
-	min-width: 204px;
-
-	transition: background-color $transition-time $transition-function;
-
+.hero__button {
 	cursor: pointer;
-
-	&:hover,
-	&:focus {
-		background-color: $btn-hover-color;
-	}
+	@extend %button;
 }

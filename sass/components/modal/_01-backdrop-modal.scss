@@ -1,5 +1,12 @@
 /* ---------МОДАЛКА ВСПЛЫВАЮЩАЯ!!!!------------ */
 
+// Фоновое изображение
+.backdrop.is-hidden {
+	opacity: 0;
+
+	pointer-events: none;
+}
+
 .backdrop {
 	position: fixed;
 	top: 0px;
@@ -15,11 +22,7 @@
 	transition: opacity 700ms $transition-function;
 }
 
-.backdrop.is-hidden {
-	opacity: 0;
-
-	pointer-events: none;
-}
+// Модальное Окно
 
 .backdrop.is-hidden .modal {
 	left: 50%;
@@ -32,15 +35,17 @@
 .modal {
 	position: absolute;
 	left: 50%;
-	transform: translate(-50%, 20%) scale(1);
+
+	padding-top: 40px;
 
 	width: 528px;
 	min-height: 581px;
-	padding-top: 40px;
 
 	background-color: white;
 
 	opacity: 1;
+
+	transform: translate(-50%, 20%) scale(1);
 
 	transition: transform $transition-time $transition-function $transition-time,
 		opacity $transition-time $transition-function $transition-time;

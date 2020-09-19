@@ -1,58 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=fallback");
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-/* ЭТО КРОССБРАУЗЕРНЫЙ ХАК ОТ РЕПЕТЫ!!! */
-/* Это на будущее, пока не поддерживается всеми браузерами */
-/* -webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none; */
-/* прячет из разметки, но оставляет для читалок */
-.checkbox-check {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-.checkbox-check:checked + .icon-check {
-  border-radius: 2px;
-  border-color: transparent;
-  background-color: #2196f3;
-  background-image: url(../images/icon-check.svg);
-  background-origin: border-box;
-}
-
-.checkbox-check:checked:hover + .icon-check {
-  background-image: url(../images/icon-check.svg), -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.2)), to(rgba(47, 48, 58, 0.2)));
-  background-image: url(../images/icon-check.svg), linear-gradient(to right, rgba(47, 48, 58, 0.2), rgba(47, 48, 58, 0.2));
-}
-
-.checkbox-check:checked:active + .icon-check {
-  background-image: url(../images/icon-check.svg), -webkit-gradient(linear, left top, right top, from(rgba(233, 234, 236, 0.2)), to(rgba(233, 234, 236, 0.2)));
-  background-image: url(../images/icon-check.svg), linear-gradient(to right, rgba(233, 234, 236, 0.2), rgba(233, 234, 236, 0.2));
-}
-
-.checkbox-link {
-  border-bottom: 1px solid currentColor;
-  line-height: 0.9;
-  color: #2196f3;
-}
-
-.btn, .form .button-submit {
+.hero__button, .footer__button-subscribe, .modal__button-submit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,296 +11,45 @@
           align-items: center;
   margin-left: auto;
   margin-right: auto;
+  width: 200px;
+  height: 50px;
   color: #ffffff;
   background-color: #2196f3;
   border: 1px solid transparent;
   border-radius: 4px;
+  outline: transparent;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
-/*
-Document
-========
-*/
-/**
-Use a better box model (opinionated).
-*/
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.hero__button:hover, .footer__button-subscribe:hover, .modal__button-submit:hover, .hero__button:focus, .footer__button-subscribe:focus, .modal__button-submit:focus {
+  background-color: #188ce8;
 }
 
-/**
-Use a more readable tab size (opinionated).
-*/
-:root {
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-     tab-size: 4;
+.hero__button:active, .footer__button-subscribe:active, .modal__button-submit:active {
+  background-color: #1e8ce6dc;
 }
 
-/**
-1. Correct the line height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-*/
-html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
-
-/*
-Sections
-========
-*/
-/**
-Remove the margin in all browsers.
-*/
-body {
-  margin: 0;
-}
-
-/**
-Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
-*/
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-}
-
-/*
-Grouping content
-================
-*/
-/**
-1. Add the correct height in Firefox.
-2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-*/
-hr {
-  height: 0;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-}
-
-/*
-Text-level semantics
-====================
-*/
-/**
-Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-abbr[title] {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-}
-
-/**
-Add the correct font weight in Edge and Safari.
-*/
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
-1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
-2. Correct the odd 'em' font sizing in all browsers.
-*/
-code,
-kbd,
-samp,
-pre {
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
-}
-
-/**
-Add the correct font size in all browsers.
-*/
-small {
-  font-size: 80%;
-}
-
-/**
-Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
-*/
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/*
-Tabular data
-============
-*/
-/**
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-*/
-table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-}
-
-/*
-Forms
-=====
-*/
-/**
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-*/
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-}
-
-/**
-Remove the inheritance of text transform in Edge and Firefox.
-1. Remove the inheritance of text transform in Firefox.
-*/
-button,
-select {
-  /* 1 */
-  text-transform: none;
-}
-
-/**
-Correct the inability to style clickable types in iOS and Safari.
-*/
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-
-/**
-Remove the inner border and padding in Firefox.
-*/
-::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/**
-Restore the focus styles unset by the previous rule.
-*/
-:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
-Remove the additional ':invalid' styles in Firefox.
-See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
-*/
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-/**
-Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
-*/
-legend {
-  padding: 0;
-}
-
-/**
-Add the correct vertical alignment in Chrome and Firefox.
-*/
-progress {
-  vertical-align: baseline;
-}
-
-/**
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
-1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
-*/
-[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
-}
-
-/**
-Remove the inner padding in Chrome and Safari on macOS.
-*/
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to 'inherit' in Safari.
-*/
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-}
-
-/*
-Interactive
-===========
-*/
-/*
-Add the correct display in Chrome and Safari.
-*/
-summary {
-  display: list-item;
-}
-
-.body {
-  padding-top: 80px;
-  background-color: #ffffff;
-  color: #757575;
-  font-family: roboto, sans-serif;
+.footer-title {
+  display: block;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
   letter-spacing: 0.03em;
-}
-
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  color: #ffffff;
+  text-transform: uppercase;
 }
 
 img {
@@ -386,8 +82,17 @@ h5 {
   margin: 0;
 }
 
-.icon {
-  fill: currentColor;
+.body {
+  padding-top: 80px;
+  background-color: #ffffff;
+  color: #757575;
+  font-family: roboto, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 .container {
@@ -397,6 +102,20 @@ h5 {
   padding-right: 15px;
   width: 1200px;
   /* outline: 2px solid tomato; */
+}
+
+.section-title {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: #212121;
+}
+
+.icon {
+  fill: currentColor;
 }
 
 .flexbox {
@@ -413,30 +132,6 @@ h5 {
       flex-wrap: wrap;
 }
 
-.section-title {
-  margin-top: 0px;
-  margin-bottom: 50px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  color: #212121;
-}
-
-.footer-title {
-  display: block;
-  margin-top: 0px;
-  margin-bottom: 20px;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -450,32 +145,6 @@ h5 {
 
 .no-top-padding {
   padding-top: 0px;
-}
-
-.page-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  background-color: #ffffff;
-  height: 80px;
-  border-bottom: 1px solid #ececec;
-}
-
-.container.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  outline: 2px solid tomato;
 }
 
 /* LOGO */
@@ -504,6 +173,32 @@ h5 {
 
 .logo-footer {
   color: #ffffff;
+}
+
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #ffffff;
+  height: 80px;
+  border-bottom: 1px solid #ececec;
+}
+
+.container.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  outline: 2px solid tomato;
 }
 
 /* SITE NAV!!!*/
@@ -649,22 +344,8 @@ h5 {
   letter-spacing: 0.06em;
 }
 
-.btn {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  padding: 10px 32px;
-  min-width: 204px;
-  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.hero__button {
   cursor: pointer;
-}
-
-.btn:hover, .btn:focus {
-  background-color: #188ce8;
 }
 
 /* FEATURES НАШИ ПРЕИМУЩЕСТВА */
@@ -1124,41 +805,7 @@ h5 {
   border: 1px solid #ffffff;
 }
 
-.form-subscribe .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: none;
-      flex-wrap: none;
-  width: 200px;
-  padding: 10px 28px;
-  color: #ffffff;
-  background-color: #2196f3;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: 1px solid transparent;
-  border-radius: 4px;
-  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-subscribe .button:hover, .form-subscribe .button:focus {
-  background-color: #188ce8;
-}
-
-.form-subscribe .button .text {
+.footer__button-subscribe .button__text {
   margin-right: 10px;
 }
 
@@ -1181,6 +828,11 @@ h5 {
 }
 
 /* ---------МОДАЛКА ВСПЛЫВАЮЩАЯ!!!!------------ */
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .backdrop {
   position: fixed;
   top: 0px;
@@ -1193,11 +845,6 @@ h5 {
   transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
 .backdrop.is-hidden .modal {
   left: 50%;
   -webkit-transform: translate(-50%, -100%) scale(0.1);
@@ -1208,13 +855,13 @@ h5 {
 .modal {
   position: absolute;
   left: 50%;
-  -webkit-transform: translate(-50%, 20%) scale(1);
-          transform: translate(-50%, 20%) scale(1);
+  padding-top: 40px;
   width: 528px;
   min-height: 581px;
-  padding-top: 40px;
   background-color: white;
   opacity: 1;
+  -webkit-transform: translate(-50%, 20%) scale(1);
+          transform: translate(-50%, 20%) scale(1);
   -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
@@ -1370,10 +1017,24 @@ h5 {
 
 .checkbox-link {
   display: inline-block;
+  border-bottom: 1px solid currentColor;
+  line-height: 0.9;
+  color: #2196f3;
 }
 
 .checkbox-label:hover .checkbox-link {
   color: rgba(33, 33, 33, 0.9);
+}
+
+.checkbox-check {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .icon-check {
@@ -1392,33 +1053,31 @@ h5 {
   background-color: rgba(56, 53, 53, 0.616);
 }
 
+.checkbox-check:checked + .icon-check {
+  border-radius: 2px;
+  border-color: transparent;
+  background-color: #2196f3;
+  background-image: url(../images/icon-check.svg);
+  background-origin: border-box;
+}
+
+.checkbox-check:checked:hover + .icon-check {
+  background-image: url(../images/icon-check.svg), -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.2)), to(rgba(47, 48, 58, 0.2)));
+  background-image: url(../images/icon-check.svg), linear-gradient(to right, rgba(47, 48, 58, 0.2), rgba(47, 48, 58, 0.2));
+}
+
+.checkbox-check:checked:active + .icon-check {
+  background-image: url(../images/icon-check.svg), -webkit-gradient(linear, left top, right top, from(rgba(233, 234, 236, 0.2)), to(rgba(233, 234, 236, 0.2)));
+  background-image: url(../images/icon-check.svg), linear-gradient(to right, rgba(233, 234, 236, 0.2), rgba(233, 234, 236, 0.2));
+}
+
 /* BUTTON SUBMIT */
-.form .button-submit:disabled {
+.form__button-submit:disabled {
   background-color: gray;
 }
 
-.form .button-submit:disabled:hover {
+.form__button-submit:disabled:hover {
   background-color: gray;
-}
-
-.form .button-submit {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  width: 200px;
-  height: 50px;
-  outline: transparent;
-}
-
-.form .button-submit:hover {
-  background-color: #1e8ce6;
-}
-
-.form .button-submit:active {
-  background-color: #1e8ce6dc;
 }
 
 /* BUTTON CLOSE */
@@ -1476,4 +1135,222 @@ h5 {
 .button-close:hover .icon-close {
   fill: #2196f3;
 }
+
+/* FILTERS-LIST BUTTONS */
+.filters-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px;
+}
+
+.filters-list .item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.filters-list .filter {
+  padding: 6px 22px;
+  border-radius: 4px;
+  border: 0px solid transparent;
+  min-width: 73px;
+  height: 38px;
+  background-color: var(--button-bcg);
+  color: var(--title-text-color);
+  font-style: 400px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  -webkit-transition: color var(--transition-time) var(--transition-function), background-color var(--transition-time) var(--transition-function);
+  transition: color var(--transition-time) var(--transition-function), background-color var(--transition-time) var(--transition-function);
+}
+
+.filters-list filter:hover,
+.filters-list filter:focus {
+  /* border: 0px; */
+  color: var(--white-color);
+  background-color: var(--accent-color);
+  -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* если несколько кнопок то в главном селекторе выстраивается шрифты и рамки и так далее, а во второстепенных .button.primary .button.secondary - выстраиваются отличающиеся цвета */
+/* PORTFOLIO*/
+/* .portfolio-list img {
+	display: block;
+} */
+.portfolio-list a {
+  display: block;
+}
+
+.portfolio-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* background-color: teal; */
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /* max-width: 1200px; */
+  /* ОЛДСКУЛЬНЫЙ ВАРИАНТ */
+  /* margin: -15px; */
+  /* outline: 1px solid tomato; */
+  /* рагульный вариант */
+  /* justify-content: space-between; */
+}
+
+.thumb {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  /* overflow: hidden; */
+}
+
+/* calc (100% - кол-во марджинов в строке * значение марджина / количество элементов в строке) */
+.portfolio-list .item {
+  /* border: 1px solid tomato; */
+  /* моднявая тема */
+  width: calc((100% - 2 * 30px) / 3);
+  /* еще предлагали вставлять flex-basis вместо width */
+  /* при моднявом методе надо задать: */
+  /* margin-right: 30px; */
+  /* margin-bottom: 30px; */
+  /* ОЛДСКУЛЬНЫЙ ВАРИАНТ */
+  /* margin: 15px; */
+  /* border: 1px solid var(--folio-border); */
+  /* width: 370px; */
+  /* max-height: 404px; */
+  /* background-color: tomato; */
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-transition: -webkit-box-shadow var(--transition-time) var(--transition-function);
+  transition: -webkit-box-shadow var(--transition-time) var(--transition-function);
+  transition: box-shadow var(--transition-time) var(--transition-function);
+  transition: box-shadow var(--transition-time) var(--transition-function), -webkit-box-shadow var(--transition-time) var(--transition-function);
+}
+
+/* Альтернатива, Вариация работы с оформлением флекса
+при моднявом методе!! */
+/* первый вариант */
+.portfolio-list .item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+.portfolio-list .item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+/* ЕСЛИ ЗАДАНЫ марджин райт и боттом! */
+/* второй вариант */
+/* .portfolio-links:nth-child(3n) {
+	margin-right: 0px;
+}
+
+.portfolio-links:nth-last-child(-n + 3) {
+	margin-bottom: 0px;
+} */
+.card-content {
+  padding: 20px 24px;
+  border: 1px solid var(--folio-border);
+  border-top: 0px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.portfolio-list .item .thumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* align-items: center; */
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-list .item .thumb::before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+  -webkit-transition: opacity var(--transition-time) var(--transition-function), -webkit-transform var(--transition-time) var(--transition-function);
+  transition: opacity var(--transition-time) var(--transition-function), -webkit-transform var(--transition-time) var(--transition-function);
+  transition: transform var(--transition-time) var(--transition-function), opacity var(--transition-time) var(--transition-function);
+  transition: transform var(--transition-time) var(--transition-function), opacity var(--transition-time) var(--transition-function), -webkit-transform var(--transition-time) var(--transition-function);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.portfolio-list .item .text {
+  position: absolute;
+  color: var(--white-color);
+  padding: 63px 24px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400px;
+  font-size: 18px;
+  line-height: 1.56;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+  -webkit-transition: opacity var(--transition-time) var(--transition-function), -webkit-transform var(--transition-time) var(--transition-function);
+  transition: opacity var(--transition-time) var(--transition-function), -webkit-transform var(--transition-time) var(--transition-function);
+  transition: transform var(--transition-time) var(--transition-function), opacity var(--transition-time) var(--transition-function);
+  transition: transform var(--transition-time) var(--transition-function), opacity var(--transition-time) var(--transition-function), -webkit-transform var(--transition-time) var(--transition-function);
+}
+
+.portfolio-list .item:hover,
+.portfolio-list .item:focus {
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.portfolio-list .item .thumb:hover::before,
+.portfolio-list .item .thumb:hover .text {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+.portfolio-list .item .title {
+  /* ATTENTION */
+  /* padding-left: 24px;
+	padding-right: 24px; */
+  margin-top: 0px;
+  margin-bottom: 4px;
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.portfolio-list .item p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: var(--primary-text-color);
+  font-size: 16px;
+  line-height: 1.87;
+  text-decoration: none;
+}
+
+/* .portfolio-list .item a {
+	color: var(--primary-text-color);
+
+	font-size: 16px;
+	line-height: 1.87;
+	text-decoration: none;
+} */
 /*# sourceMappingURL=main.css.map */
