@@ -1,20 +1,20 @@
 /* SITE NAV!!!*/
 
 .navbar {
-	@include flex-center();
+	@extend %flex-center;
 	margin-right: auto;
 }
 
 .site-nav {
-	@include flex-center();
+	@extend %flex-center;
 	/* outline: 1px solid tomato; */
 }
 
-.site-nav .item:not(:last-child) {
+.site-nav__item:not(:last-child) {
 	margin-right: 50px;
 }
 
-.site-nav .link {
+.site-nav__link {
 	position: relative;
 
 	display: block;
@@ -23,7 +23,7 @@
 
 	color: $title-text-color;
 
-	@include header-font();
+	@extend %header-font;
 
 	transition: color $transition-time $transition-function;
 

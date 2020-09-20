@@ -4,16 +4,16 @@
 	display: flex;
 }
 
-.contacts-nav .item:not(:last-child) {
+.contacts-nav__item:not(:last-child) {
 	margin-right: 30px;
 }
 
-.contacts-nav .link {
-	@include flex-center();
+.contacts-nav__link {
+	@extend %flex-center;
 
 	color: $primary-text-color;
 
-	@include header-font();
+	@extend %header-font;
 
 	transition: color $transition-time $transition-function;
 
@@ -23,6 +23,6 @@
 	}
 }
 
-.contacts-nav .link .icon {
+.contacts-nav__icon {
 	margin-right: 10px;
 }

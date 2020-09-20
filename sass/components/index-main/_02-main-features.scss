@@ -1,7 +1,11 @@
 /* FEATURES НАШИ ПРЕИМУЩЕСТВА */
 
-.feature.container {
-	@include container();
+.section-title {
+	@extend %section-title;
+}
+
+.feature__container {
+	@extend %container;
 	height: 251px;
 	// outline: 2px solid tomato;
 }
@@ -10,7 +14,7 @@
 	@include flex-center();
 }
 
-.feature-list .item {
+.feature-list__item {
 	width: calc((100% - 3 * 30px) / 4);
 
 	&::before {
@@ -41,16 +45,19 @@
 $items: "1" "feature1", "2" "feature2", "3" "feature3", "4" "feature4";
 
 @each $childNumber, $iconName in $items {
-	.feature-list .item:nth-child(#{$childNumber})::before {
+	.feature-list__item:nth-child(#{$childNumber})::before {
 		background-image: url(../images/#{$iconName}.svg);
 	}
 }
 
-.feature-list .title {
-	@include subtitle-font();
+.feature-subtitle {
+	@extend %subtitle-font;
+}
+
+.feature-list__subtitle {
 	margin-bottom: 10px;
 }
 
-.feature-list .text {
-	@include footer-feature-checkbox-font();
+.feature-list__text {
+	@extend %footer-feature-checkbox-font;
 }
