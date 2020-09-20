@@ -1,11 +1,6 @@
 /* FEATURES НАШИ ПРЕИМУЩЕСТВА */
 
-.section-title {
-	@extend %section-title;
-}
-
-.feature__container {
-	@extend %container;
+.feature.container {
 	height: 251px;
 	// outline: 2px solid tomato;
 }

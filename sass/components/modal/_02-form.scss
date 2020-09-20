@@ -1,23 +1,23 @@
 /*       -------АНКЕТА В МОДАЛКЕ!!!!------------ */
 
-.form {
+.modal-form {
 	width: 448px;
 	/* outline: 1px solid tomato; */
-	@include no-flex-center;
+	@extend %no-flex-center;
 }
 
-.form .title {
+.modal-form__title {
 	display: block;
 	margin-bottom: 12px;
-	@include form-title-font;
+	@extend %form-title-font;
 }
 
-.form .item {
+.modal-form__item {
 	margin-bottom: 10px;
 }
 
 // LABELS Data and Comment
-.form-label {
+.modal-form__label {
 	width: 448px;
 
 	/* outline: 1px solid blue; */
@@ -26,14 +26,14 @@
 .text-label {
 	display: block;
 	margin-bottom: 4px;
-	@include form-label-font;
+	@extend %form-label-font;
 }
 
-.form-label .thumb {
+.modal-form__thumb {
 	position: relative;
 }
 
-.form-label .form-input {
+.modal-form__input {
 	height: 40px;
 	padding: 12px 40px;
 
@@ -41,7 +41,7 @@
 
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	border-radius: 4px;
-	@include form-input-font;
+	@extend %form-input-font;
 
 	&:hover {
 		border: 1px solid rgba(33, 33, 33, 0.7);
@@ -55,16 +55,17 @@
 	}
 }
 
-.form-label .icon-form {
+.modal-form__icon {
 	position: absolute;
 	top: 50%;
 	left: 12px;
 
 	transform: translateY(-50%);
-}
+	fill: $title-text-color;
 
-.form-label:focus-within .icon-form {
-	fill: $accent-color;
+	.modal-form__label:focus-within & {
+		fill: $accent-color;
+	}
 }
 
 .comment-input {
@@ -74,7 +75,7 @@
 	padding: 12px 16px;
 	width: 448px;
 
-	@include form-input-font;
+	@extend %form-input-font;
 
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	border-radius: 4px;

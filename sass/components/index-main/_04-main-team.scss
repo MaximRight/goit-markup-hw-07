@@ -1,16 +1,12 @@
 /* TEAM PHOTOS AND LINKS!!!*/
 
-.section.team {
+.team.section {
 	background-color: $button-bcg;
 }
 
-.team__container {
-	@extend %container;
-}
-
-.section-title {
-	@extend %section-title;
-}
+// .team__container {
+// 	@extend %container;
+// }
 
 .team-members {
 	@extend %flex-center;
@@ -70,7 +66,7 @@
 }
 
 .teamcard-links .link {
-	@include flex-center;
+	@extend %flex-center;
 
 	width: 44px;
 	height: 44px;
@@ -82,12 +78,12 @@
 		background-color $transition-time $transition-function;
 
 	/* background-color: yellow; */
-}
 
-.teamcard-links .link:hover {
-	color: $white-color;
-	background-color: $accent-color;
+	&:hover {
+		color: $white-color;
+		background-color: $accent-color;
 
-	/* если убрать fill: currentcolor из иконки, тогда заливаем в ссылке сразу и при ховере */
-	/* fill: tomato; */
+		/* если убрать fill: currentcolor из иконки, тогда заливаем в ссылке сразу и при ховере */
+		/* fill: tomato; */
+	}
 }

@@ -50,6 +50,14 @@ h5 {
 	padding-bottom: $section-padding;
 }
 
+// Заголовки в секциях
+.section-title {
+	margin-top: 0px;
+	margin-bottom: 50px;
+
+	@include title-font();
+}
+
 // Контейнер для центровки контента
 .container {
 	@include container();

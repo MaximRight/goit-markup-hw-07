@@ -86,10 +86,10 @@
 			</section>
 
 			<!-- FEATURES НАШИ ПРЕИМУЩЕСТВА  -->
-			<section class="section feature">
+			<section class="feature section">
 				<!-- <div class="container"> -->
 				<h2 class="section-title visually-hidden"> Наши Преимущества </h2>
-				<div class="feature__container">
+				<div class="feature container">
 					<ul class="feature-list">
 						<!-- тут можно было бы поставить к item .icon-radar -->
 						<li class="feature-list__item">
@@ -133,8 +133,8 @@
 			</section>
 
 			<!-- СЕКЦИЯ ЧЕМ ЗАНИМАЕМСЯ -->
-			<section class="section expertise no-top-padding">
-				<div class="expertise__container">
+			<section class="expertise section no-top-padding">
+				<div class="expertise container">
 					<h2 class="section-title"> Чем мы занимаемся </h2>
 					<ul class="images-wedo">
 						<li class="images-wedo__item">
@@ -179,8 +179,8 @@
 			</section>
 
 			<!-- НАША КОМАНДА TEAM  -->
-			<section class="section team">
-				<div class="team__container">
+			<section class="team section">
+				<div class="container">
 					<h2 class="section-title"> Наша Команда </h2>
 
 					<ul class="team-members">
@@ -363,48 +363,56 @@
 					<h2 class="section-title"> Постоянные Клиенты </h2>
 
 					<ul class="clients-list">
-						<li class="item">
-							<a href="##" class="link"
-								><svg class="icon" width="44.27" height="49.23">
+						<li class="clients-list__item">
+							<a href="##" class="clients-list__link"
+								><svg
+									class="clients-list__icon icon"
+									width="44.27"
+									height="49.23"
+								>
 									<use href="./images/sprite-new.svg#icon-logo1"></use>
 								</svg>
 								<!-- <img src="./images/logo1.svg" width="44.27" height="49.23" alt="" /> -->
 							</a>
 						</li>
-						<li class="item">
-							<a href="##" class="link"
-								><svg class="icon" width="40" height="52">
+						<li class="clients-list__item">
+							<a href="##" class="clients-list__link"
+								><svg class="clients-list__icon icon" width="40" height="52">
 									<use href="./images/sprite-new.svg#icon-logo2"></use>
 								</svg>
 							</a>
 						</li>
-						<li class="item">
-							<a href="##" class="link"
-								><svg class="icon" width="41" height="42.6">
+						<li class="clients-list__item">
+							<a href="##" class="clients-list__link"
+								><svg class="clients_list__icon icon" width="41" height="42.6">
 									<use href="./images/sprite-new.svg#icon-logo3"></use>
 								</svg>
 								<!-- <img src="./images/logo3.svg" width="41" height="42.6" alt="" /> -->
 							</a>
 						</li>
-						<li class="item">
-							<a href="##" class="link"
-								><svg class="icon" width="79.66" height="42.02">
+						<li class="clients-list__item">
+							<a href="##" class="clients-list__link"
+								><svg
+									class="clients-list__icon icon"
+									width="79.66"
+									height="42.02"
+								>
 									<use href="./images/sprite-new.svg#icon-logo4"></use>
 								</svg>
 								<!-- <img src="./images/logo4.svg" width="79.66" height="42.02" alt="" /> -->
 							</a>
 						</li>
-						<li class="item">
-							<a href="##" class="link">
-								<svg class="icon" width="59" height="47">
+						<li class="clients-list__item">
+							<a href="##" class="clients-list__link">
+								<svg class="clients-list__icon icon" width="59" height="47">
 									<use href="./images/sprite-new.svg#icon-logo5"></use>
 								</svg>
 								<!-- <img src="./images/logo5.svg" width="59" height="47" alt="" /> -->
 							</a>
 						</li>
-						<li class="item">
-							<a href="##" class="link"
-								><svg class="icon" width="88.48" height="45">
+						<li class="clients-list__item">
+							<a href="##" class="clients-list__link"
+								><svg class="clients-list__icon icon" width="88.48" height="45">
 									<use href="./images/sprite-new.svg#icon-logo6"></use>
 								</svg>
 								<!-- <img src="./images/logo6.svg" width="88.48" height="45.44" alt="" /> -->
@@ -418,72 +426,75 @@
 			<div class="backdrop is-hidden" data-modal>
 				<div class="modal">
 					<!-- FORM WINDOW!!! -->
-					<form class="form js-speaker-form" autocomplete="on">
-						<b class="title">Оставьте свои данные мы вам перезвоним</b>
+					<form class="modal-form js-speaker-form" autocomplete="on">
+						<b class="modal-form__title"
+							>Оставьте свои данные мы вам перезвоним</b
+						>
 						<ul>
-							<li class="item">
-								<label class="form-label"
+							<li class="modal-form__item">
+								<label class="modal-form__label"
 									><span class="text-label">Имя</span>
-									<div class="thumb">
+									<div class="modal-form__thumb">
 										<input
 											type="text"
 											name="name"
-											class="form-input"
+											class="modal-form__input"
 											placeholder=" "
 										/>
 
-										<svg class="icon-form" width="18" height="18">
+										<svg class="modal-form__icon" width="18" height="18">
 											<use href="./images/sprite-new.svg#icon-modal-name"></use>
 										</svg>
 									</div>
 								</label>
 							</li>
 
-							<li class="item">
-								<label class="form-label">
+							<li class="modal-form__item">
+								<label class="modal-form__label">
 									<span class="text-label">Телефон</span>
-									<div class="thumb">
+									<div class="modal-form__thumb">
 										<input
 											aut
 											type="tel"
 											name="tel"
-											class="form-input"
+											class="modal-form__input"
 											placeholder=" "
 										/>
-										<svg class="icon-form" width="18" height="18">
+										<svg class="modal-form__icon" width="18" height="18">
 											<use href="./images/sprite-new.svg#icon-modal-tel"></use>
 										</svg>
 									</div> </label
 							></li>
 
-							<li class="item">
-								<label class="form-label">
+							<li class="modal-form__item">
+								<label class="modal-form__label">
 									<span class="text-label">Почта</span>
-									<div class="thumb">
+									<div class="modal-form__thumb">
 										<input
 											type="email"
 											name="mail"
-											class="form-input"
+											class="modal-form__input"
 											placeholder=" "
 										/>
-										<svg class="icon-form" width="18" height="18">
+										<svg class="modal-form__icon icon" width="18" height="18">
 											<use
 												href="./images/sprite-new.svg#icon-modal-email"
 											></use>
 										</svg>
 									</div> </label
 							></li>
-						</ul>
 
-						<label class="form-label">
-							<span class="text-label">Комментарий</span>
-							<textarea
-								class="comment-input"
-								name="comment"
-								rows="7"
-								placeholder="Введите текст"
-							></textarea>
-						</label>
+							<li
+								><label class="modal-form__label">
+									<span class="text-label">Комментарий</span>
+									<textarea
+										class="comment-input"
+										name="comment"
+										rows="7"
+										placeholder="Введите текст"
+									></textarea></label
+							></li>
+						</ul>
 
 						<label class="checkbox-label">
 							<input

@@ -33,14 +33,16 @@
 
 					<!-- Ссылки на другие страницы или разделы текущей -->
 					<ul class="site-nav">
-						<li class="item">
-							<a href="./index.html" class="link">Студия</a>
+						<li class="site-nav__item">
+							<a href="./index.html" class="site-nav__link">Студия</a>
 						</li>
-						<li class="item">
-							<a href="./portfolio.html" class="link current">Портфолио</a>
+						<li class="site-nav__item">
+							<a href="./portfolio.html" class="site-nav__link current"
+								>Портфолио</a
+							>
 						</li>
-						<li class="item">
-							<a href="##" class="link">Контакты</a>
+						<li class="site-nav__item">
+							<a href="##" class="site-nav__link">Контакты</a>
 						</li>
 					</ul>
 				</nav>
@@ -49,17 +51,17 @@
 				<!-- Контактные Данные в шапке, это не нав, потому что не ссылки на секции -->
 				<!-- <div class="contacts-container"> -->
 				<ul class="contacts-nav">
-					<li class="item">
-						<a href="mailto:info@devstudio.com" class="link">
-							<svg class="icon" width="16" height="12">
+					<li class="contacts-nav__item">
+						<a href="mailto:info@devstudio.com" class="contacts-nav__link">
+							<svg class="contacts-nav__icon icon" width="16" height="12">
 								<use href="./images/sprite-new.svg#icon-envelope"></use>
 							</svg>
 							<span> info@devstudio.com </span></a
 						>
 					</li>
-					<li class="item">
-						<a href="tel:+380961111111" class="link">
-							<svg class="icon" width="10" height="16">
+					<li class="contacts-nav__item">
+						<a href="tel:+380961111111" class="contacts-nav__link">
+							<svg class="contacts-nav__icon icon" width="10" height="16">
 								<use href="./images/sprite-new.svg#icon-smartphone"></use>
 							</svg>
 							+38 096 111 11 11
@@ -80,7 +82,7 @@
 				<div class="container">
 					<h2 class="visually-hidden">Фильтры</h2>
 
-					<ul class="filters__filters-list filters-list">
+					<ul class="filters__list filters-list">
 						<li class="item"
 							><button class="filter" type="button">Все</button></li
 						>

@@ -4,12 +4,12 @@
 	@include flex-center($content: space-between);
 }
 
-.clients-list .item:nth-child(2) .icon {
+.clients-list__item:nth-child(2) .icon {
 	filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.2));
 }
 
-.clients-list .link {
-	@include flex-center;
+.clients-list__link {
+	@extend %flex-center;
 
 	width: 170px;
 	height: 90px;
@@ -28,6 +28,6 @@
 	}
 }
 
-.clients-list .icon {
+.clients-list__icon {
 	transition: color $transition-time $transition-function;
 }

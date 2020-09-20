@@ -25,6 +25,11 @@
 	flex-wrap: wrap;
 }
 
+%no-flex-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 %mgn-bottom-30 {
 	margin-bottom: 30px;
 }

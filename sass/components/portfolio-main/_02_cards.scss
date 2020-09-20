@@ -1,7 +1,7 @@
 // PORTFOLIO CARDS
 
 .portfolio-list {
-	@include flex-center;
+	@extend %flex-center;
 
 	/* background-color: teal; */
 }
@@ -41,7 +41,7 @@
 }
 
 .portfolio-list__thumb {
-	@include flex-center;
+	@extend %flex-center;
 
 	position: relative;
 
@@ -81,7 +81,7 @@
 
 	padding: 63px 24px;
 
-	@include thumb-text-font;
+	@extend %thumb-text-font;
 
 	transform: translateY(100%);
 	opacity: 0;
