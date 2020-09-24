@@ -1,0 +1,32 @@
+.features-item {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: tomato;
+  font-size: 32px;
+}
+
+.features-item:nth-child(1) {
+  background-color: gray;
+}
+
+.features-item:nth-child(2) {
+  background-color: blue;
+}
+
+.features-item:nth-child(3) {
+  background-color: tomato;
+}
+
+.features-item:nth-child(4) {
+  background-color: green;
+}
+
+.features-item:nth-child(5) {
+  background-color: aqua;
+}
+
+.features-item:nth-child(6) {
+  background-color: red;
+}
+/*# sourceMappingURL=test.css.map */

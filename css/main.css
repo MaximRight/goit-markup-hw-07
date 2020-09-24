@@ -3,7 +3,7 @@
   padding-top: 0px;
 }
 
-.container.nav, .navbar, .site-nav, .contacts-nav__link, .images-wedo, .images-wedo__thumb, .team-members, .teamcard-links .link, .clients-list__link, .checkbox-label, .button-close, .filters-list, .portfolio-list, .portfolio-list__thumb {
+.container.nav, .navbar, .site-nav, .contacts-nav__link, .images-wedo__thumb, .teamcard-links .link, .clients-list__link, .checkbox-label, .button-close, .filters-list, .portfolio-list, .portfolio-list__thumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -390,20 +390,6 @@ h5 {
 /* FEATURES НАШИ ПРЕИМУЩЕСТВА */
 .feature.container {
   height: 251px;
-}
-
-.feature-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .feature-list__item {

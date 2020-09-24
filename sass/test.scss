@@ -1,0 +1,21 @@
+.features-item {
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: tomato;
+	font-size: 32px;
+}
+
+@mixin colorise($colors, $baseSelector) {
+	@each $color in $colors {
+		$idx: index($colors, $color);
+
+		#{$baseSelector}:nth-child(#{$idx}) {
+			background-color: #{$color};
+		}
+	}
+}
+
+$colors: "gray", "blue", "tomato", "green", "aqua", "red";
+
+@include colorise($colors, ".features-item");

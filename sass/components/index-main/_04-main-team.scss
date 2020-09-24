@@ -8,9 +8,9 @@
 // 	@extend %container;
 // }
 
-.team-members {
-	@extend %flex-center;
-}
+// .team-members {
+// 	@extend %flex-center;
+// }
 
 .team-members__item {
 	width: calc((100% - 3 * 30px) / 4);

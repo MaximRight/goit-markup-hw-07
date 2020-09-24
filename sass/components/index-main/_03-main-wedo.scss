@@ -4,9 +4,9 @@
 	@extend %no-top-padding;
 }
 
-.images-wedo {
-	@extend %flex-center;
-}
+// .images-wedo {
+// 	@extend %flex-center;
+// }
 
 .images-wedo__item {
 	width: calc((100% - 2 * 30px) / 3);
